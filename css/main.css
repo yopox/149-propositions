@@ -1,0 +1,56 @@
+@font-face {
+  font-family: "jbMono";
+  src: url("https://raw.githubusercontent.com/JetBrains/JetBrainsMono/master/web/woff/JetBrainsMono-Regular.woff") format("woff");
+}
+body {
+  background-color: #222222;
+  color: #cccccc;
+  font-family: jbMono, monospace;
+  padding: 64px 128px;
+}
+
+header {
+  display: flex;
+  flex-flow: row;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 32px;
+  padding-bottom: 32px;
+}
+header #header-gauche {
+  padding-right: 32px;
+  min-width: 33%;
+}
+header #header-droite {
+  font-size: 20px;
+  padding-left: 32px;
+}
+
+.thematique {
+  padding: 32px 64px;
+}
+.thematique .titre {
+  font-size: 32px;
+}
+.thematique .propositions {
+  display: flex;
+  flex-flow: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 16px;
+  margin: 16px 0;
+  border: 1px solid #b3fcd4;
+}
+.thematique .proposition {
+  width: 64px;
+  height: 64px;
+  font-size: 16px;
+  margin: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #333333;
+  border-radius: 12px;
+}
+
+/*# sourceMappingURL=main.css.map */
