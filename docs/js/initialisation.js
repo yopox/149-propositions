@@ -4,7 +4,7 @@ for (const i in propositions) {
     let resultats = re.exec(propositions[i])
 
     // Propositions de la thématique
-    let parent = document.getElementsByClassName(resultats[2])[0]
+    let parent = document.getElementsByClassName( resultats[2])[0]
 
     // Création de l'élément div.proposition
     let proposition = document.createElement("div")
@@ -17,9 +17,9 @@ for (const i in propositions) {
         // MAJ élément sélectionné
         Array.prototype.forEach.call(
             document.getElementsByClassName("proposition"),
-            pr => pr.classList.remove("selectionne")
+            pr => pr.classList.remove("proposition--selectionne")
         )
-        proposition.classList.add("selectionne")
+        proposition.classList.add("proposition--selectionne")
 
         // MAJ des détails de la proposition
         let details = proposition.parentElement.previousSibling.previousSibling
@@ -63,7 +63,7 @@ for (const i in propositions) {
     // État
     let actu = actualites[resultats[1]]
     for (const j in actu) {
-        if (actu[j][0] !== "") proposition.classList.add(actu[j][0])
+        if (actu[j][0] !== "") proposition.classList.add('proposition--' + actu[j][0])
     }
 
     parent.appendChild(proposition)

@@ -1152,8 +1152,9 @@ header {
     display: flex;
     flex-flow: row;
     flex-wrap: wrap;
-    padding: 16px;
+    justify-content: start;
     margin: 16px 0;
+    padding: 16px;
     border: 2px solid #b3fcd4; }
   .thematique .proposition {
     width: 48px;
@@ -1177,11 +1178,11 @@ header {
         width: 64px;
         height: 64px;
         font-size: 16px; } }
-    .thematique .proposition.selectionne, .thematique .proposition:hover {
+    .thematique .proposition--selectionne, .thematique .proposition:hover {
       border: 2px solid #b3fcd4; }
-    .thematique .proposition.joker {
+    .thematique .proposition--joker {
       background-color: #633; }
-    .thematique .proposition.attention {
+    .thematique .proposition--attention {
       background-color: #664d33; }
 
 .retour-en-haut {

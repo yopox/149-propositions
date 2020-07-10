@@ -79,7 +79,6 @@ body {
           }
         }
       }
-
     }
   }
 
@@ -183,8 +182,9 @@ header {
     display: flex;
     flex-flow: row;
     flex-wrap: wrap;
-    padding: 16px;
+    justify-content: start;
     margin: 16px 0;
+    padding: 16px;
     border: 2px solid $couleur-vert;
   }
 
@@ -214,15 +214,15 @@ header {
       font-size: 16px;
     }
 
-    &.selectionne, &:hover {
+    &--selectionne, &:hover {
       border: 2px solid $couleur-vert;
     }
 
-    &.joker {
+    &--joker {
       background-color: $couleur-joker;
     }
 
-    &.attention {
+    &--attention {
       background-color: $couleur-attention;
     }
   }
