@@ -50,6 +50,8 @@ for (const i in propositions) {
             detailsActu.textContent = actu[1]
             let detailsActuSource = document.createElement("a")
             detailsActuSource.href = actu[2]
+            detailsActuSource.target = "_blank"
+            detailsActuSource.rel = "noopener"
             detailsActuSource.textContent = "[source]"
             detailsActu.appendChild(detailsActuSource)
             details.appendChild(detailsActu)
