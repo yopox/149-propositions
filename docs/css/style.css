@@ -16,6 +16,10 @@ body {
   body a {
     color: #fff; }
 
+#root {
+  max-width: 1840px;
+  margin: 0 auto; }
+
 .thematique, .proposition, .propositions {
   transition: padding .3s ease-out;
   transform: translateY(2rem);
@@ -1179,6 +1183,12 @@ header {
       background-color: #633; }
     .thematique .proposition.attention {
       background-color: #664d33; }
+
+.retour-en-haut {
+  margin-top: 40px;
+  text-align: center;
+  display: block;
+  color: #cccccc; }
 
 @keyframes anim-fade-up {
   to {

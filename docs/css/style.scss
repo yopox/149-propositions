@@ -51,6 +51,11 @@ body {
   }
 }
 
+#root {
+  max-width: 1840px;
+  margin: 0 auto;
+}
+
 .thematique, .proposition, .propositions {
   transition: padding .3s ease-out;
   transform: translateY(2rem);
@@ -62,6 +67,7 @@ body {
   @for $i from 1 through 10 {
     &:nth-child(#{$i}) {
       animation-delay: #{$i / 4}s;
+
       .titre {
         animation-delay: #{$i / 4 + .1}s;
       }
@@ -220,7 +226,13 @@ header {
       background-color: $couleur-attention;
     }
   }
+}
 
+.retour-en-haut {
+  margin-top: 40px;
+  text-align: center;
+  display: block;
+  color: #cccccc;
 }
 
 @keyframes anim-fade-up {
