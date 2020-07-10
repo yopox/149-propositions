@@ -6,7 +6,17 @@ body {
   background-color: #222;
   color: #cccccc;
   font-family: jbMono, monospace;
-  padding: 64px 128px;
+  padding: 32px 16px;
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  body {
+    padding: 32px 64px;
+  }
+}
+@media (min-width: 1024px) {
+  body {
+    padding: 64px 128px;
+  }
 }
 body a {
   color: #fff;
@@ -14,26 +24,84 @@ body a {
 
 header {
   display: flex;
-  flex-flow: row;
+  flex-flow: column;
   justify-content: space-around;
   align-items: center;
-  font-size: 32px;
-  padding-bottom: 32px;
+  font-size: 28px;
+  padding-bottom: 8px;
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  header {
+    flex-flow: row;
+    font-size: 28px;
+    padding-bottom: 16px;
+  }
+}
+@media (min-width: 1024px) {
+  header {
+    flex-flow: row;
+    font-size: 32px;
+    padding-bottom: 32px;
+  }
 }
 header #header-gauche {
-  padding-right: 32px;
   min-width: 33%;
+  padding-right: 8px;
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  header #header-gauche {
+    padding-right: 16px;
+  }
+}
+@media (min-width: 1024px) {
+  header #header-gauche {
+    padding-right: 32px;
+  }
 }
 header #header-droite {
-  font-size: 20px;
-  padding-left: 32px;
+  font-size: 16px;
+  padding: 16px 32px;
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  header #header-droite {
+    font-size: 18px;
+    padding-left: 16px;
+    padding-top: 0;
+  }
+}
+@media (min-width: 1024px) {
+  header #header-droite {
+    font-size: 20px;
+    padding-left: 32px;
+    padding-top: 0;
+  }
 }
 
 .thematique {
-  padding: 32px 64px;
+  padding: 16px 8px;
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .thematique {
+    padding: 16px 32px;
+  }
+}
+@media (min-width: 1024px) {
+  .thematique {
+    padding: 32px 64px;
+  }
 }
 .thematique .titre {
-  font-size: 32px;
+  font-size: 24px;
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .thematique .titre {
+    font-size: 28px;
+  }
+}
+@media (min-width: 1024px) {
+  .thematique .titre {
+    font-size: 32px;
+  }
 }
 .thematique .details {
   display: none;
@@ -62,9 +130,9 @@ header #header-droite {
   border: 2px solid #b3fcd4;
 }
 .thematique .proposition {
-  width: 64px;
-  height: 64px;
-  font-size: 16px;
+  width: 48px;
+  height: 48px;
+  font-size: 14px;
   margin: 8px;
   display: flex;
   align-items: center;
@@ -73,6 +141,20 @@ header #header-droite {
   border-radius: 12px;
   cursor: pointer;
   box-sizing: border-box;
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .thematique .proposition {
+    width: 64px;
+    height: 64px;
+    font-size: 16px;
+  }
+}
+@media (min-width: 1024px) {
+  .thematique .proposition {
+    width: 64px;
+    height: 64px;
+    font-size: 16px;
+  }
 }
 .thematique .proposition.selectionne, .thematique .proposition:hover {
   border: 2px solid #b3fcd4;

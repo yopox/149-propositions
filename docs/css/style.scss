@@ -5,6 +5,29 @@ $couleur-attention: #664d33;
 $couleur-applique: #363;
 $couleur-vert: #b3fcd4;
 
+$police-grande-ordi: 32px;
+$police-grande-tablette: 28px;
+$police-grande-tel: 24px;
+
+$police-moyenne-ordi: 20px;
+$police-moyenne-tablette: 18px;
+$police-moyenne-tel: 16px;
+
+$tablette: 768px;
+$ordi: 1024px;
+
+@mixin tablette {
+  @media (min-width: #{$tablette}) and (max-width: #{$ordi - 1px}) {
+    @content;
+  }
+}
+
+@mixin ordi {
+  @media (min-width: #{$ordi}) {
+    @content;
+  }
+}
+
 @font-face {
   font-family: "jbMono";
   src: url("https://raw.githubusercontent.com/JetBrains/JetBrainsMono/master/web/woff/JetBrainsMono-Regular.woff") format('woff');
@@ -14,7 +37,14 @@ body {
   background-color: $couleur-fond;
   color: #cccccc;
   font-family: jbMono, monospace;
-  padding: 64px 128px;
+  padding: 32px 16px;
+
+  @include tablette {
+    padding: 32px 64px;
+  }
+  @include ordi {
+    padding: 64px 128px;
+  }
 
   a {
     color: #fff;
@@ -23,28 +53,72 @@ body {
 
 header {
   display: flex;
-  flex-flow: row;
+  flex-flow: column;
   justify-content: space-around;
   align-items: center;
-  font-size: 32px;
-  padding-bottom: 32px;
+
+  font-size: $police-grande-tablette;
+  padding-bottom: 8px;
+
+  @include tablette {
+    flex-flow: row;
+    font-size: $police-grande-tablette;
+    padding-bottom: 16px;
+  }
+  @include ordi {
+    flex-flow: row;
+    font-size: $police-grande-ordi;
+    padding-bottom: 32px;
+  }
 
   #header-gauche {
-    padding-right: 32px;
     min-width: 33%;
+    padding-right: 8px;
+
+    @include tablette {
+      padding-right: 16px;
+    }
+    @include ordi {
+      padding-right: 32px;
+    }
   }
 
   #header-droite {
-    font-size: 20px;
-    padding-left: 32px;
+    font-size: $police-moyenne-tel;
+    padding: 16px 32px;
+
+    @include tablette {
+      font-size: $police-moyenne-tablette;
+      padding-left: 16px;
+      padding-top: 0;
+    }
+    @include ordi {
+      font-size: $police-moyenne-ordi;
+      padding-left: 32px;
+      padding-top: 0;
+    }
   }
 }
 
 .thematique {
-  padding: 32px 64px;
+  padding: 16px 8px;
+
+  @include tablette {
+    padding: 16px 32px;
+  }
+  @include ordi {
+    padding: 32px 64px;
+  }
 
   .titre {
-    font-size: 32px;
+    font-size: $police-grande-tel;
+
+    @include tablette {
+      font-size: $police-grande-tablette;
+    }
+    @include ordi {
+      font-size: $police-grande-ordi;
+    }
   }
 
   .details {
@@ -79,9 +153,9 @@ header {
   }
 
   .proposition {
-    width: 64px;
-    height: 64px;
-    font-size: 16px;
+    width: 48px;
+    height: 48px;
+    font-size: 14px;
     margin: 8px;
     display: flex;
     align-items: center;
@@ -90,6 +164,18 @@ header {
     border-radius: 12px;
     cursor: pointer;
     box-sizing: border-box;
+
+
+    @include tablette {
+      width: 64px;
+      height: 64px;
+      font-size: 16px;
+    }
+    @include ordi {
+      width: 64px;
+      height: 64px;
+      font-size: 16px;
+    }
 
     &.selectionne, &:hover {
       border: 2px solid $couleur-vert;
