@@ -89,13 +89,11 @@ header {
 
     @include tablette {
       font-size: $police-moyenne-tablette;
-      padding-left: 16px;
-      padding-top: 0;
+      padding: 0 0 0 16px;
     }
     @include ordi {
       font-size: $police-moyenne-ordi;
-      padding-left: 32px;
-      padding-top: 0;
+      padding: 0 0 0 32px;
     }
   }
 }

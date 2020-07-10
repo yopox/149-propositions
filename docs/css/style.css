@@ -65,15 +65,13 @@ header #header-droite {
 @media (min-width: 768px) and (max-width: 1023px) {
   header #header-droite {
     font-size: 18px;
-    padding-left: 16px;
-    padding-top: 0;
+    padding: 0 0 0 16px;
   }
 }
 @media (min-width: 1024px) {
   header #header-droite {
     font-size: 20px;
-    padding-left: 32px;
-    padding-top: 0;
+    padding: 0 0 0 32px;
   }
 }
 
