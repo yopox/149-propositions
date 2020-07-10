@@ -36,6 +36,19 @@ header {
     font-size: 32px;
   }
 
+  .details {
+    display: none;
+    background-color: #333333;
+    border-radius: 12px;
+    padding: 16px;
+    margin-top: 8px;
+    transition: all ease-out 1s;
+
+    &.show {
+      display: block;
+    }
+  }
+
   .propositions {
     display: flex;
     flex-flow: row;
@@ -56,6 +69,12 @@ header {
     justify-content: center;
     background-color: #333333;
     border-radius: 12px;
+    cursor: pointer;
+    box-sizing: border-box;
+
+    &.selectionne, &:hover {
+      border: 2px solid #b3fcd4;
+    }
   }
 
 }
