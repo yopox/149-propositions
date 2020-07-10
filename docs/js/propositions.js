@@ -47,7 +47,7 @@ var propositions = [
     "PROPOSITION SD-A2.2 : Interdire les centres villes pour les véhicules les plus émetteurs de gaz à effet de serre.",
     "PROPOSITION SD-A2.3 : Augmenter les montants du Fonds Vélo de 50 à 200 millions d'euros par an pour financer des pistes cyclables.",
     "PROPOSITION SD-A2.4 : Généraliser les aménagements de voies réservées aux véhicules partagés et aux transports collectifs sur les autoroutes et voies rapides.",
-    "PROPOSITION SD-A3.1 : RÉDUIRE LA VITESSE SUR AUTOROUTE À 110 KM/H MAXIMUM Nous voulons que d'ici 2030, les émissions de CO2 liées à la grande vitesse soient réduites. Les émissions de gaz à effet de serre sur les routes représentent une part importante des émissions de gaz à effet de serre. C'est pourquoi nous proposons de mettre en place une réduction de la vitesse sur autoroute en passant de 130 km/h à 110km/h..",
+    "PROPOSITION SD-A3.1 : Réduire la vitesse sur autoroute à 110 km/h maximum.",
     "PROPOSITION SD-A4.1 : Réduire la TVA sur les billets de train de 10 % à 5,5 %.",
     "PROPOSITION SD-A4.2 : Généraliser les mesures tarifaires attractives déjà pratiquées par certaines régions.",
     "PROPOSITION SD-A4.3 : Développer un plan d'investissement massif pour moderniser les infrastructures, les matériels roulants et les gares pour en faire des pôles multimodaux (lien avec les voitures, cars, vélos…).",

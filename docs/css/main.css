@@ -3,7 +3,7 @@
   src: url("https://raw.githubusercontent.com/JetBrains/JetBrainsMono/master/web/woff/JetBrainsMono-Regular.woff") format("woff");
 }
 body {
-  background-color: #222222;
+  background-color: #222;
   color: #cccccc;
   font-family: jbMono, monospace;
   padding: 64px 128px;
@@ -34,7 +34,7 @@ header #header-droite {
 }
 .thematique .details {
   display: none;
-  background-color: #333333;
+  background-color: #333;
   border-radius: 12px;
   padding: 16px;
   margin-top: 8px;
@@ -60,13 +60,19 @@ header #header-droite {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #333333;
+  background-color: #333;
   border-radius: 12px;
   cursor: pointer;
   box-sizing: border-box;
 }
 .thematique .proposition.selectionne, .thematique .proposition:hover {
   border: 2px solid #b3fcd4;
+}
+.thematique .proposition.joker {
+  background-color: #633;
+}
+.thematique .proposition.attention {
+  background-color: #663;
 }
 
 /*# sourceMappingURL=main.css.map */

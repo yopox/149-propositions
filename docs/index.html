@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/main.css">
     <script src="js/propositions.js"></script>
+    <script src="js/etats.js"></script>
 
     <meta name="theme-color" content="#fafafa">
 </head>
@@ -66,15 +67,22 @@
 </body>
 
 <script>
-    const re = /PROPOSITION ([A-Z.-]+)([0-9.]+) : (.*)/
+    const re = /PROPOSITION (([A-Z.-]+)([0-9.]+)) : (.*)/
     for (const i in propositions) {
+        // Regex
         let resultats = re.exec(propositions[i])
-        let parent = document.getElementsByClassName(resultats[1])[0]
+
+        // Propositions de la thématique
+        let parent = document.getElementsByClassName(resultats[2])[0]
+
+        // Création de l'élément div.proposition
         let proposition = document.createElement("div")
         proposition.classList.add("proposition")
-        proposition.appendChild(document.createTextNode(resultats[1]))
-        proposition.appendChild(document.createElement("br"))
         proposition.appendChild(document.createTextNode(resultats[2]))
+        proposition.appendChild(document.createElement("br"))
+        proposition.appendChild(document.createTextNode(resultats[3]))
+
+        // onClick listener
         proposition.addEventListener("click", () => {
             Array.prototype.forEach.call(
                 document.getElementsByClassName("proposition"),
@@ -93,6 +101,11 @@
             let titre = details.firstChild
             titre.textContent = resultats[0]
         })
+
+        // État
+        if (attention.includes(resultats[1])) proposition.classList.add("attention")
+        if (jokers.includes(resultats[1])) proposition.classList.add("joker")
+
         parent.appendChild(proposition)
     }
 </script>
