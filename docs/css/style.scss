@@ -51,6 +51,39 @@ body {
   }
 }
 
+.thematique, .proposition, .propositions {
+  transition: padding .3s ease-out;
+  transform: translateY(2rem);
+  opacity: 0;
+  animation: anim-fade-up .2s ease-out forwards;
+}
+
+.thematique {
+  @for $i from 1 through 10 {
+    &:nth-child(#{$i}) {
+      animation-delay: #{$i / 4}s;
+      .titre {
+        animation-delay: #{$i / 4 + .1}s;
+      }
+
+      .proposition {
+        @for $j from 1 through 50 {
+          &:nth-child(#{$j}) {
+            animation-delay: #{$j / 100 + $i / 4 + .1}s;
+          }
+        }
+      }
+
+    }
+  }
+
+  .titre {
+    transform: translateX(-2rem);
+    opacity: 0;
+    animation: anim-fade-up .2s ease-out forwards;
+  }
+}
+
 header {
   display: flex;
   flex-flow: column;
@@ -102,7 +135,7 @@ header {
   padding: 16px 8px;
 
   @include tablette {
-    padding: 16px 32px;
+    padding: 0
   }
   @include ordi {
     padding: 32px 64px;
@@ -144,11 +177,11 @@ header {
     display: flex;
     flex-flow: row;
     flex-wrap: wrap;
-    justify-content: center;
     padding: 16px;
     margin: 16px 0;
     border: 2px solid $couleur-vert;
   }
+
 
   .proposition {
     width: 48px;
@@ -188,4 +221,11 @@ header {
     }
   }
 
+}
+
+@keyframes anim-fade-up {
+  to {
+    transform: translate(0);
+    opacity: 1;
+  }
 }
