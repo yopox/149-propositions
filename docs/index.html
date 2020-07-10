@@ -7,10 +7,10 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/raz.css">
+    <link rel="stylesheet" href="css/style.css">
     <script src="js/propositions.js"></script>
-    <script src="js/etats.js"></script>
+    <script src="js/actualites.js"></script>
 
     <meta name="theme-color" content="#fafafa">
 </head>
@@ -19,8 +19,8 @@
 
 <header>
     <div id="header-gauche">149 PROPOSITIONS <br> POUR LE CLIMAT</div>
-    <div id="header-droite">Emmanuel Macron s'est engagé à reprendre 146 des 149 propositions
-        de la Convention Citoyenne pour le Climat. <br> Qu'en est-il vraiment ?
+    <div id="header-droite">Emmanuel Macron <a href="https://youtu.be/m0F-uslFshA?t=557">s'est engagé</a> à reprendre 146 des 149 propositions
+        de la Convention Citoyenne pour le Climat, et qu'elles soient mises en œuvre au plus vite.<br> Où en est-on ?
     </div>
 </header>
 
@@ -28,6 +28,7 @@
     <div class="titre">CONSOMMER</div>
     <div class="details">
         <div class="titre"></div>
+        <div class="actualites"></div>
     </div>
     <div class="propositions C"></div>
 </div>
@@ -36,6 +37,7 @@
     <div class="titre">PRODUIRE & TRAVAILLER</div>
     <div class="details">
         <div class="titre"></div>
+        <div class="actualites"></div>
     </div>
     <div class="propositions PT"></div>
 </div>
@@ -44,6 +46,7 @@
     <div class="titre">SE DÉPLACER</div>
     <div class="details">
         <div class="titre"></div>
+        <div class="actualites"></div>
     </div>
     <div class="propositions SD-A SD-B SD-C SD-D SD-E"></div>
 </div>
@@ -52,6 +55,7 @@
     <div class="titre">SE LOGER</div>
     <div class="details">
         <div class="titre"></div>
+        <div class="actualites"></div>
     </div>
     <div class="propositions SL"></div>
 </div>
@@ -60,54 +64,22 @@
     <div class="titre">SE NOURRIR</div>
     <div class="details">
         <div class="titre"></div>
+        <div class="actualites"></div>
     </div>
     <div class="propositions SN"></div>
 </div>
 
+<div class="thematique">
+    <div class="titre">RÉFORME CONSTITUTIONNELLE</div>
+    <div class="details">
+        <div class="titre"></div>
+        <div class="actualites"></div>
+    </div>
+    <div class="propositions RC"></div>
+</div>
+
 </body>
 
-<script>
-    const re = /PROPOSITION (([A-Z.-]+)([0-9.]+)) : (.*)/
-    for (const i in propositions) {
-        // Regex
-        let resultats = re.exec(propositions[i])
-
-        // Propositions de la thématique
-        let parent = document.getElementsByClassName(resultats[2])[0]
-
-        // Création de l'élément div.proposition
-        let proposition = document.createElement("div")
-        proposition.classList.add("proposition")
-        proposition.appendChild(document.createTextNode(resultats[2]))
-        proposition.appendChild(document.createElement("br"))
-        proposition.appendChild(document.createTextNode(resultats[3]))
-
-        // onClick listener
-        proposition.addEventListener("click", () => {
-            Array.prototype.forEach.call(
-                document.getElementsByClassName("proposition"),
-                pr => pr.classList.remove("selectionne")
-            )
-            proposition.classList.add("selectionne")
-
-            let details = proposition.parentElement.previousSibling.previousSibling
-            Array.prototype.forEach.call(
-                document.getElementsByClassName("details"),
-                dt => {
-                    if (dt !== details && dt.classList.contains("show")) dt.classList.remove("show")
-                }
-            )
-            if (!details.classList.contains("show")) details.classList.add("show")
-            let titre = details.firstChild
-            titre.textContent = resultats[0]
-        })
-
-        // État
-        if (attention.includes(resultats[1])) proposition.classList.add("attention")
-        if (jokers.includes(resultats[1])) proposition.classList.add("joker")
-
-        parent.appendChild(proposition)
-    }
-</script>
+<script src="js/initialisation.js"></script>
 
 </html>

@@ -8,6 +8,9 @@ body {
   font-family: jbMono, monospace;
   padding: 64px 128px;
 }
+body a {
+  color: #fff;
+}
 
 header {
   display: flex;
@@ -43,6 +46,12 @@ header #header-droite {
 .thematique .details.show {
   display: block;
 }
+.thematique .details .actualite {
+  padding-top: 16px;
+}
+.thematique .details a {
+  margin-left: 16px;
+}
 .thematique .propositions {
   display: flex;
   flex-flow: row;
@@ -50,7 +59,7 @@ header #header-droite {
   justify-content: center;
   padding: 16px;
   margin: 16px 0;
-  border: 1px solid #b3fcd4;
+  border: 2px solid #b3fcd4;
 }
 .thematique .proposition {
   width: 64px;
@@ -72,7 +81,7 @@ header #header-droite {
   background-color: #633;
 }
 .thematique .proposition.attention {
-  background-color: #663;
+  background-color: #664d33;
 }
 
-/*# sourceMappingURL=main.css.map */
+/*# sourceMappingURL=style.css.map */

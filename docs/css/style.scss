@@ -1,7 +1,7 @@
 $couleur-fond: #222;
 $couleur-proposition: #333;
 $couleur-joker: #633;
-$couleur-attention: #663;
+$couleur-attention: #664d33;
 $couleur-applique: #363;
 $couleur-vert: #b3fcd4;
 
@@ -15,6 +15,10 @@ body {
   color: #cccccc;
   font-family: jbMono, monospace;
   padding: 64px 128px;
+
+  a {
+    color: #fff;
+  }
 }
 
 header {
@@ -54,6 +58,14 @@ header {
     &.show {
       display: block;
     }
+
+    .actualite {
+      padding-top: 16px;
+    }
+
+    a {
+      margin-left: 16px;
+    }
   }
 
   .propositions {
@@ -63,7 +75,7 @@ header {
     justify-content: center;
     padding: 16px;
     margin: 16px 0;
-    border: 1px solid $couleur-vert;
+    border: 2px solid $couleur-vert;
   }
 
   .proposition {
