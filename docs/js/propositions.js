@@ -75,7 +75,7 @@ var propositions = [
     "PROPOSITION SD-D1.4 : Favoriser des nouvelles modalités d'organisation du travail",
     "PROPOSITION SD-D2.1 : Mettre en place un portail unique permettant de savoir à tout moment, rapidement et simplement, quels sont les moyens et dispositifs existants sur un territoire pour se déplacer",
     "PROPOSITION SD-D2.2 : Développer un projet d'unification des titres de transport ou de carte multimodale",
-    "Proposition SD-D3.1 : Intégrer les citoyens aux Autorités organisatrices de la mobilité à toutes les échelles",
+    "PROPOSITION SD-D3.1 : Intégrer les citoyens aux Autorités organisatrices de la mobilité à toutes les échelles",
     "PROPOSITION SD-E1 : Adopter une écocontribution kilométrique renforcé",
     "PROPOSITION SD-E2 : Organiser progressivement la fin du trafic aérien sur les vols intérieurs d'ici 2025, uniquement sur les lignes où il existe une alternative bas carbone satisfaisante en prix et en temps (sur un trajet de moins de 4h)",
     "PROPOSITION SD-E3 : Interdire la construction de nouveaux aéroports et l'extension des aéroports existants",
