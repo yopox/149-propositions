@@ -1191,6 +1191,13 @@ header {
   display: block;
   color: #cccccc; }
 
+footer {
+  font-size: 12px;
+  margin-top: 40px;
+  color: #4d4d4d; }
+  footer a {
+    color: inherit; }
+
 @keyframes anim-fade-up {
   to {
     transform: translate(0);

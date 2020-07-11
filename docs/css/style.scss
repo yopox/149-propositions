@@ -235,6 +235,15 @@ header {
   color: #cccccc;
 }
 
+footer {
+  font-size: 12px;
+  margin-top: 40px;
+  color: lighten($couleur-proposition, 10%);
+  a {
+    color: inherit;
+  }
+}
+
 @keyframes anim-fade-up {
   to {
     transform: translate(0);
