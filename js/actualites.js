@@ -23,6 +23,7 @@ const actualites = {
     ],
     "PT12.1": [
         [Etats.ATTENTION, "30/06/2020 - Mme. Pannier-Runacher refuse le moratoire sur la 5G.", "https://youtu.be/2FW83wwuNZE?t=26"],
+        [Etats.AVANCEE, "02/07/2020 - Le gouvernement a été contraint de demander un rapport sur la 5G (qui ne conditionne rien cependant).", "https://www.lesechos.fr/tech-medias/hightech/5g-le-gouvernement-tente-dapaiser-les-craintes-sanitaires-1220725"],
     ],
 
     // —————————————————————
