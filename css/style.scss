@@ -2,19 +2,29 @@ $couleur-fond: #222;
 $couleur-proposition: #333;
 $couleur-joker: #633;
 $couleur-attention: #664d33;
-$couleur-applique: #363;
+$couleur-bien: #336;
+$couleur-fait: #363;
 $couleur-vert: #b3fcd4;
 
+$police-grande-ordi2: 36px;
 $police-grande-ordi: 32px;
 $police-grande-tablette: 28px;
 $police-grande-tel: 24px;
 
-$police-moyenne-ordi: 20px;
-$police-moyenne-tablette: 18px;
-$police-moyenne-tel: 16px;
+$police-moyenne-ordi2: 20px;
+$police-moyenne-ordi: 18px;
+$police-moyenne-tablette: 16px;
+$police-moyenne-tel: 14px;
 
 $tablette: 768px;
 $ordi: 1024px;
+$ordi2: 1440px;
+
+@mixin pas-tel {
+  @media (min-width: $tablette) {
+    @content;
+  }
+}
 
 @mixin tablette {
   @media (min-width: #{$tablette}) and (max-width: #{$ordi - 1px}) {
@@ -23,7 +33,13 @@ $ordi: 1024px;
 }
 
 @mixin ordi {
-  @media (min-width: #{$ordi}) {
+  @media (min-width: #{$ordi}) and (max-width: #{$ordi2 - 1px}) {
+    @content;
+  }
+}
+
+@mixin ordi2 {
+  @media (min-width: #{$ordi2}) {
     @content;
   }
 }
@@ -37,13 +53,20 @@ body {
   background-color: $couleur-fond;
   color: #cccccc;
   font-family: jbMono, monospace;
+  font-size: $police-moyenne-tel;
   padding: 32px 16px;
 
   @include tablette {
     padding: 32px 64px;
+    font-size: $police-moyenne-tablette;
   }
   @include ordi {
     padding: 64px 128px;
+    font-size: $police-moyenne-ordi;
+  }
+  @include ordi2 {
+    padding: 96px 160px;
+    font-size: $police-moyenne-ordi2;
   }
 
   a {
@@ -54,9 +77,70 @@ body {
 #racine {
   max-width: 1840px;
   margin: 0 auto;
+  padding: 0 16px;
+
+  @include tablette {
+    padding: 0 32px;
+  }
+  @include ordi {
+    padding: 0 64px;
+  }
+  @include ordi2 {
+    padding: 0 92px;
+  }
 }
 
-.thematique, .proposition, .propositions {
+#avancement {
+  margin: 32px 0;
+
+  display: flex;
+  flex-flow: column;
+  justify-content: start;
+
+  #resume {
+    margin-bottom: 32px;
+  }
+
+  #progres-conteneur {
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    @include pas-tel {
+      display: block;
+    }
+  }
+
+  #progres {
+    display: flex;
+    flex-flow: column;
+    @include pas-tel {
+      flex-flow: row;
+      flex-wrap: wrap;
+    }
+
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: start;
+
+    .avancee {
+      display: flex;
+      flex-flow: row;
+      align-items: center;
+      @include pas-tel {
+        margin: 0 32px;
+      }
+
+      .proposition {
+        width: 40px;
+        height: 40px;
+        margin-left: 0;
+        margin-right: 16px;
+      }
+    }
+  }
+}
+
+.thematique, .proposition, .propositions, .avancee {
   transition: padding .3s ease-out;
   transform: translateY(2rem);
   opacity: 0;
@@ -91,7 +175,7 @@ body {
 
 header {
   display: flex;
-  flex-flow: column;
+  flex-flow: row;
   justify-content: space-around;
   align-items: center;
 
@@ -99,61 +183,32 @@ header {
   padding-bottom: 8px;
 
   @include tablette {
-    flex-flow: row;
     font-size: $police-grande-tablette;
     padding-bottom: 16px;
   }
   @include ordi {
-    flex-flow: row;
     font-size: $police-grande-ordi;
     padding-bottom: 32px;
   }
-
-  #header-gauche {
-    min-width: 33%;
-    padding-right: 8px;
-
-    @include tablette {
-      padding-right: 16px;
-    }
-    @include ordi {
-      padding-right: 32px;
-    }
-  }
-
-  #header-droite {
-    font-size: $police-moyenne-tel;
-    padding: 16px 32px;
-
-    @include tablette {
-      font-size: $police-moyenne-tablette;
-      padding: 0 0 0 16px;
-    }
-    @include ordi {
-      font-size: $police-moyenne-ordi;
-      padding: 0 0 0 32px;
-    }
+  @include ordi2 {
+    font-size: $police-grande-ordi2;
+    padding-bottom: 48px;
   }
 }
 
 .thematique {
-  padding: 16px 8px;
-
-  @include tablette {
-    padding: 0
-  }
-  @include ordi {
-    padding: 32px 64px;
-  }
+  margin-top: 64px;
 
   .titre {
     font-size: $police-grande-tel;
-
     @include tablette {
       font-size: $police-grande-tablette;
     }
     @include ordi {
       font-size: $police-grande-ordi;
+    }
+    @include ordi2 {
+      font-size: $police-grande-ordi2;
     }
   }
 
@@ -182,49 +237,51 @@ header {
     display: flex;
     flex-flow: row;
     flex-wrap: wrap;
-    justify-content: start;
+    justify-content: center;
     margin: 16px 0;
     padding: 16px;
     border: 2px solid $couleur-vert;
   }
 
+}
 
-  .proposition {
-    width: 48px;
-    height: 48px;
-    font-size: 14px;
-    margin: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: $couleur-proposition;
-    border-radius: 12px;
-    cursor: pointer;
-    box-sizing: border-box;
+.proposition {
+  width: 48px;
+  height: 48px;
+  font-size: 14px;
+  margin: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $couleur-proposition;
+  border-radius: 12px;
+  cursor: pointer;
+  box-sizing: border-box;
 
+  @include pas-tel {
+    width: 64px;
+    height: 64px;
+    font-size: 16px;
+  }
 
-    @include tablette {
-      width: 64px;
-      height: 64px;
-      font-size: 16px;
-    }
-    @include ordi {
-      width: 64px;
-      height: 64px;
-      font-size: 16px;
-    }
+  &--selectionne, &:hover {
+    border: 2px solid $couleur-vert;
+  }
 
-    &--selectionne, &:hover {
-      border: 2px solid $couleur-vert;
-    }
+  &--joker {
+    background-color: $couleur-joker;
+  }
 
-    &--joker {
-      background-color: $couleur-joker;
-    }
+  &--attention {
+    background-color: $couleur-attention;
+  }
 
-    &--attention {
-      background-color: $couleur-attention;
-    }
+  &--bien {
+    background-color: $couleur-bien;
+  }
+
+  &--fait {
+    background-color: $couleur-fait;
   }
 }
 
@@ -236,11 +293,25 @@ header {
 }
 
 footer {
-  font-size: 12px;
   margin-top: 40px;
-  color: lighten($couleur-proposition, 10%);
+  color: lighten($couleur-proposition, 20%);
+
+  display: flex;
+  flex-flow: column;
+  @include pas-tel {
+    flex-flow: row;
+  }
+
   a {
     color: inherit;
+    margin: 8px 0;
+    @include pas-tel {
+      margin: 0 16px 0 0;
+    }
+  }
+
+  #contribuer {
+    color: $couleur-vert;
   }
 }
 

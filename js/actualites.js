@@ -1,4 +1,4 @@
-const Etats = {"JOKER": "joker", "ATTENTION": "attention", "AVANCEE": ""}
+const Etats = {JOKER: "joker", ATTENTION: "attention", AVANCEE: "bien", FAIT: "fait", ATTENTE: ""}
 Object.freeze(Etats)
 
 const actualites = {

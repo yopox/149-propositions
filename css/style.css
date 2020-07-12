@@ -6,16 +6,25 @@ body {
   background-color: #222;
   color: #cccccc;
   font-family: jbMono, monospace;
+  font-size: 14px;
   padding: 32px 16px;
 }
 @media (min-width: 768px) and (max-width: 1023px) {
   body {
     padding: 32px 64px;
+    font-size: 16px;
   }
 }
-@media (min-width: 1024px) {
+@media (min-width: 1024px) and (max-width: 1439px) {
   body {
     padding: 64px 128px;
+    font-size: 18px;
+  }
+}
+@media (min-width: 1440px) {
+  body {
+    padding: 96px 160px;
+    font-size: 20px;
   }
 }
 body a {
@@ -25,9 +34,74 @@ body a {
 #racine {
   max-width: 1840px;
   margin: 0 auto;
+  padding: 0 16px;
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  #racine {
+    padding: 0 32px;
+  }
+}
+@media (min-width: 1024px) and (max-width: 1439px) {
+  #racine {
+    padding: 0 64px;
+  }
+}
+@media (min-width: 1440px) {
+  #racine {
+    padding: 0 92px;
+  }
 }
 
-.thematique, .proposition, .propositions {
+#avancement {
+  margin: 32px 0;
+  display: flex;
+  flex-flow: column;
+  justify-content: start;
+}
+#avancement #resume {
+  margin-bottom: 32px;
+}
+#avancement #progres-conteneur {
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+}
+@media (min-width: 768px) {
+  #avancement #progres-conteneur {
+    display: block;
+  }
+}
+#avancement #progres {
+  display: flex;
+  flex-flow: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: start;
+}
+@media (min-width: 768px) {
+  #avancement #progres {
+    flex-flow: row;
+    flex-wrap: wrap;
+  }
+}
+#avancement #progres .avancee {
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+}
+@media (min-width: 768px) {
+  #avancement #progres .avancee {
+    margin: 0 32px;
+  }
+}
+#avancement #progres .avancee .proposition {
+  width: 40px;
+  height: 40px;
+  margin-left: 0;
+  margin-right: 16px;
+}
+
+.thematique, .proposition, .propositions, .avancee {
   transition: padding 0.3s ease-out;
   transform: translateY(2rem);
   opacity: 0;
@@ -1602,7 +1676,7 @@ body a {
 
 header {
   display: flex;
-  flex-flow: column;
+  flex-flow: row;
   justify-content: space-around;
   align-items: center;
   font-size: 28px;
@@ -1610,61 +1684,25 @@ header {
 }
 @media (min-width: 768px) and (max-width: 1023px) {
   header {
-    flex-flow: row;
     font-size: 28px;
     padding-bottom: 16px;
   }
 }
-@media (min-width: 1024px) {
+@media (min-width: 1024px) and (max-width: 1439px) {
   header {
-    flex-flow: row;
     font-size: 32px;
     padding-bottom: 32px;
   }
 }
-header #header-gauche {
-  min-width: 33%;
-  padding-right: 8px;
-}
-@media (min-width: 768px) and (max-width: 1023px) {
-  header #header-gauche {
-    padding-right: 16px;
-  }
-}
-@media (min-width: 1024px) {
-  header #header-gauche {
-    padding-right: 32px;
-  }
-}
-header #header-droite {
-  font-size: 16px;
-  padding: 16px 32px;
-}
-@media (min-width: 768px) and (max-width: 1023px) {
-  header #header-droite {
-    font-size: 18px;
-    padding: 0 0 0 16px;
-  }
-}
-@media (min-width: 1024px) {
-  header #header-droite {
-    font-size: 20px;
-    padding: 0 0 0 32px;
+@media (min-width: 1440px) {
+  header {
+    font-size: 36px;
+    padding-bottom: 48px;
   }
 }
 
 .thematique {
-  padding: 16px 8px;
-}
-@media (min-width: 768px) and (max-width: 1023px) {
-  .thematique {
-    padding: 0;
-  }
-}
-@media (min-width: 1024px) {
-  .thematique {
-    padding: 32px 64px;
-  }
+  margin-top: 64px;
 }
 .thematique .titre {
   font-size: 24px;
@@ -1674,9 +1712,14 @@ header #header-droite {
     font-size: 28px;
   }
 }
-@media (min-width: 1024px) {
+@media (min-width: 1024px) and (max-width: 1439px) {
   .thematique .titre {
     font-size: 32px;
+  }
+}
+@media (min-width: 1440px) {
+  .thematique .titre {
+    font-size: 36px;
   }
 }
 .thematique .details {
@@ -1700,12 +1743,13 @@ header #header-droite {
   display: flex;
   flex-flow: row;
   flex-wrap: wrap;
-  justify-content: start;
+  justify-content: center;
   margin: 16px 0;
   padding: 16px;
   border: 2px solid #b3fcd4;
 }
-.thematique .proposition {
+
+.proposition {
   width: 48px;
   height: 48px;
   font-size: 14px;
@@ -1718,28 +1762,27 @@ header #header-droite {
   cursor: pointer;
   box-sizing: border-box;
 }
-@media (min-width: 768px) and (max-width: 1023px) {
-  .thematique .proposition {
+@media (min-width: 768px) {
+  .proposition {
     width: 64px;
     height: 64px;
     font-size: 16px;
   }
 }
-@media (min-width: 1024px) {
-  .thematique .proposition {
-    width: 64px;
-    height: 64px;
-    font-size: 16px;
-  }
-}
-.thematique .proposition--selectionne, .thematique .proposition:hover {
+.proposition--selectionne, .proposition:hover {
   border: 2px solid #b3fcd4;
 }
-.thematique .proposition--joker {
+.proposition--joker {
   background-color: #633;
 }
-.thematique .proposition--attention {
+.proposition--attention {
   background-color: #664d33;
+}
+.proposition--bien {
+  background-color: #336;
+}
+.proposition--fait {
+  background-color: #363;
 }
 
 .retour-en-haut {
@@ -1750,12 +1793,27 @@ header #header-droite {
 }
 
 footer {
-  font-size: 12px;
   margin-top: 40px;
-  color: #4d4d4d;
+  color: #666666;
+  display: flex;
+  flex-flow: column;
+}
+@media (min-width: 768px) {
+  footer {
+    flex-flow: row;
+  }
 }
 footer a {
   color: inherit;
+  margin: 8px 0;
+}
+@media (min-width: 768px) {
+  footer a {
+    margin: 0 16px 0 0;
+  }
+}
+footer #contribuer {
+  color: #b3fcd4;
 }
 
 @keyframes anim-fade-up {
