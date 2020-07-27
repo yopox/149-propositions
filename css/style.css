@@ -4,7 +4,7 @@
 }
 body {
   background-color: #222;
-  color: #cccccc;
+  color: #ccc;
   font-family: jbMono, monospace;
   font-size: 14px;
   padding: 32px 16px;
@@ -1761,6 +1761,8 @@ header {
   border-radius: 12px;
   cursor: pointer;
   box-sizing: border-box;
+  color: #ccc;
+  border: none;
 }
 @media (min-width: 768px) {
   .proposition {
@@ -1769,7 +1771,7 @@ header {
     font-size: 16px;
   }
 }
-.proposition--selectionne, .proposition:hover {
+.proposition--selectionne, .proposition:hover, .proposition:focus {
   border: 2px solid #b3fcd4;
 }
 .proposition--joker {

@@ -5,6 +5,7 @@ $couleur-attention: #664d33;
 $couleur-bien: #336;
 $couleur-fait: #363;
 $couleur-vert: #b3fcd4;
+$couleur-clair: #ccc;
 
 $police-grande-ordi2: 36px;
 $police-grande-ordi: 32px;
@@ -51,7 +52,7 @@ $ordi2: 1440px;
 
 body {
   background-color: $couleur-fond;
-  color: #cccccc;
+  color: $couleur-clair;
   font-family: jbMono, monospace;
   font-size: $police-moyenne-tel;
   padding: 32px 16px;
@@ -257,6 +258,8 @@ header {
   border-radius: 12px;
   cursor: pointer;
   box-sizing: border-box;
+  color: $couleur-clair;
+  border: none;
 
   @include pas-tel {
     width: 64px;
@@ -264,7 +267,7 @@ header {
     font-size: 16px;
   }
 
-  &--selectionne, &:hover {
+  &--selectionne, &:hover, &:focus {
     border: 2px solid $couleur-vert;
   }
 

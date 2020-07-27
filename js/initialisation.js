@@ -15,14 +15,16 @@ for (const i in propositions) {
     // Propositions de la thématique
     let parent = document.getElementsByClassName(resultats[2])[0]
 
-    // Création de l'élément div.proposition
-    let proposition = document.createElement("div")
+    // Création de l'élément button.proposition
+    let proposition = document.createElement("button")
     proposition.classList.add("proposition")
     proposition.appendChild(document.createTextNode(resultats[2]))
     proposition.appendChild(document.createElement("br"))
     proposition.appendChild(document.createTextNode(resultats[3]))
 
-    proposition.addEventListener("click", () => {
+    proposition.addEventListener("focus", () => {
+        proposition.title = ""
+
         // MAJ élément sélectionné
         Array.prototype.forEach.call(
             document.getElementsByClassName("proposition"),
@@ -50,6 +52,7 @@ for (const i in propositions) {
         detailsTitre.classList.add("nom-proposition")
         detailsTitre.textContent = resultats[0]
         details.appendChild(detailsTitre)
+        proposition.title += resultats[0] + "\n"
 
         // Détails : actus
         let actus = actualites[resultats[1]]
@@ -57,6 +60,7 @@ for (const i in propositions) {
             let detailsActu = document.createElement("div")
             detailsActu.classList.add("actualite", actu[0])
             detailsActu.textContent = actu[1]
+            proposition.title += actu[1]
             let detailsActuSource = document.createElement("a")
             detailsActuSource.href = actu[2]
             detailsActuSource.target = "_blank"
