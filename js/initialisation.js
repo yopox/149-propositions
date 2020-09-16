@@ -87,13 +87,13 @@ document.getElementById("attention").textContent = statutsCompte["attention"]
 document.getElementById("joker").textContent = statutsCompte["joker"]
 
 function etatProposition(listeEtats) {
-    let attention = false
+    let state = Etats.ATTENTE
     for (const i in listeEtats) {
-        if (listeEtats[i][0] === Etats.FAIT) return Etats.FAIT;
-        if (listeEtats[i][0] === Etats.JOKER) return Etats.JOKER;
-        if (listeEtats[i][0] === Etats.AVANCEE) return Etats.AVANCEE;
-        if (listeEtats[i][0] === Etats.ATTENTION) attention = true;
+        if (listeEtats[i][0] === Etats.FAIT) return Etats.FAIT
+        if (listeEtats[i][0] === Etats.JOKER) return Etats.JOKER
+        if (listeEtats[i][0] === Etats.AVANCEE && state !== Etats.ATTENTION) state = Etats.AVANCEE
+        if (listeEtats[i][0] === Etats.ATTENTION) state = Etats.ATTENTION
     }
-    return attention ? Etats.ATTENTION : Etats.ATTENTE
+    return state
 }
 
