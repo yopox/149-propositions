@@ -43,12 +43,19 @@ const actualites = {
     ],
     "SD-C1.2": [
         [Etats.ATTENTION, "Le 09 juillet 2020 - Proposé lors du projet de loi de finances mais rejeté par la majorité.", "https://reporterre.net/Budget-les-deputes-ne-prennent-pas-en-compte-les-mesures-de-la-Convention-climat"],
+        [Etats.ATTENTION, "Le 28 septembre 2020 - La proposition de figure pas dans le projet de budget.", "https://mobile.francetvinfo.fr/monde/environnement/convention-citoyenne-sur-le-climat/climat-sept-propositions-de-la-convention-citoyenne-ecartees-par-le-gouvernement-malgre-la-promesse-d-emmanuel-macron_4123179.amp?s=09"],
     ],
     "SD-C1.6": [
         [Etats.ATTENTION, "Le 09 juillet 2020 - Proposé lors du projet de loi de finances mais rejeté par la majorité.", "https://reporterre.net/Budget-les-deputes-ne-prennent-pas-en-compte-les-mesures-de-la-Convention-climat"],
     ],
+    "SD-E1": [
+        [Etats.JOKER, "Le 21 septembre 2020 - Jean-Baptiste Djebbari réfute la proposition.", "https://www.lci.fr/politique/aviation-taxation-de-l-aerien-jean-baptiste-djebbari-s-attaque-aux-thuriferaires-de-la-decroissance-2165136.html"],
+    ],
     "SD-E2": [
         [Etats.ATTENTION, "Le 29 juin 2020 - Discours du PR : il en reste aux annonces déjà faites sur les trajets de moins de 2h30.", "https://youtu.be/m0F-uslFshA?t=1675"],
+    ],
+    "SD-E3": [
+        [Etats.JOKER, "Le 01 juillet 2020 - Jean-Baptiste Djebbari annonce qu'il pourra y avoir des extensions d'aéroports.", "https://rmc.bfmtv.com/mediaplayer/video/jean-baptiste-djebbari-etait-l-invite-de-jean-jacques-bourdin-ce-mercredi-1er-jullet-2020-1259424.html"]
     ],
 
     // —————————————————————
@@ -77,6 +84,9 @@ const actualites = {
 
     "SN4.1.1": [
         [Etats.ATTENTION, "Le 29 juin 2020 - Discours du PR : il ne propose que de continuer à évaluer le CETA.", "https://youtu.be/m0F-uslFshA?t=768"]
+    ],
+    "SN7.1": [
+        [Etats.JOKER, "Le 30 juin 2020 - Nicole Belloubet rejette la mesure.", "https://www.franceinter.fr/emissions/l-invite-de-8h20-le-grand-entretien/l-invite-de-8h20-le-grand-entretien-30-juin-2020"]
     ],
 
     // —————————————————————
