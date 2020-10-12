@@ -10,6 +10,9 @@ const actualites = {
     "C2.1": [
         [Etats.ATTENTION, "Le 30 juin 2020 - Bruno Le Maire se positionne contre la mesure.", "https://www.huffingtonpost.fr/entry/macron-bruno-le-maire-joker-convention-climat_fr_5efb7570c5b612083c53aa75"],
     ],
+    "C2.1": [
+        [Etats.ATTENTION, "Le 30 juin 2020 - Bruno Le Maire se positionne contre la mesure.", "https://www.huffingtonpost.fr/entry/macron-bruno-le-maire-joker-convention-climat_fr_5efb7570c5b612083c53aa75"],
+    ],
 
     // —————————————————————
     // PRODUIRE & TRAVAILLER
