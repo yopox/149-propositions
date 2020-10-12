@@ -15,6 +15,9 @@ const actualites = {
     // PRODUIRE & TRAVAILLER
     // —————————————————————
 
+    "PT1.2": [
+        [Etats.ATTENTION, "Le 11 octobre 2020 - Le gouvernement se prononce contre les interdictions en principe, favorisant l'information.", "https://www.latribune.fr/economie/france/climat-le-gouvernement-compte-sur-le-score-carbone-859481.html"],
+    ],
     "PT3.2": [
         [Etats.JOKER, "Le 29 juin 2020 - Joker du président de la République.", "https://youtu.be/m0F-uslFshA?t=1277"],
     ],
@@ -31,6 +34,9 @@ const actualites = {
     //     SE DÉPLACER
     // —————————————————————
 
+    "SD-A2.2": [
+        [Etats.ATTENTION, "Le 11 octobre 2020 - Le gouvernement se prononce contre les interdictions en principe, favorisant l'information.", "https://www.latribune.fr/economie/france/climat-le-gouvernement-compte-sur-le-score-carbone-859481.html"],
+    ],
     "SD-A2.3": [
         [Etats.ATTENTION, "Le 09 juillet 2020 - Proposé lors du projet de loi de finances mais rejeté par la majorité.", "https://reporterre.net/Budget-les-deputes-ne-prennent-pas-en-compte-les-mesures-de-la-Convention-climat"],
     ],
@@ -41,9 +47,15 @@ const actualites = {
         [Etats.ATTENTION, "Le 30 juin 2020 - Bruno Le Maire se positionne contre la mesure.", "https://www.huffingtonpost.fr/entry/macron-bruno-le-maire-joker-convention-climat_fr_5efb7570c5b612083c53aa75"],
         [Etats.ATTENTION, "Le 09 juillet 2020 - Proposé lors du projet de loi de finances mais rejeté par la majorité.", "https://reporterre.net/Budget-les-deputes-ne-prennent-pas-en-compte-les-mesures-de-la-Convention-climat"],
     ],
+    "SD-B2.1": [
+        [Etats.ATTENTION, "Le 11 octobre 2020 - Le gouvernement se prononce contre les interdictions en principe, favorisant l'information.", "https://www.latribune.fr/economie/france/climat-le-gouvernement-compte-sur-le-score-carbone-859481.html"],
+    ],
     "SD-C1.2": [
         [Etats.ATTENTION, "Le 09 juillet 2020 - Proposé lors du projet de loi de finances mais rejeté par la majorité.", "https://reporterre.net/Budget-les-deputes-ne-prennent-pas-en-compte-les-mesures-de-la-Convention-climat"],
         [Etats.ATTENTION, "Le 28 septembre 2020 - La proposition de figure pas dans le projet de budget.", "https://mobile.francetvinfo.fr/monde/environnement/convention-citoyenne-sur-le-climat/climat-sept-propositions-de-la-convention-citoyenne-ecartees-par-le-gouvernement-malgre-la-promesse-d-emmanuel-macron_4123179.amp?s=09"],
+    ],
+    "SD-C1.3": [
+        [Etats.ATTENTION, "Le 11 octobre 2020 - Le gouvernement se prononce contre les interdictions en principe, favorisant l'information.", "https://www.latribune.fr/economie/france/climat-le-gouvernement-compte-sur-le-score-carbone-859481.html"],
     ],
     "SD-C1.6": [
         [Etats.ATTENTION, "Le 09 juillet 2020 - Proposé lors du projet de loi de finances mais rejeté par la majorité.", "https://reporterre.net/Budget-les-deputes-ne-prennent-pas-en-compte-les-mesures-de-la-Convention-climat"],
@@ -74,6 +86,9 @@ const actualites = {
     "SL2.3": [
         [Etats.AVANCEE, "Le 27 juillet 2020 - En 2021 les terrasses chauffées seront interdites, et les portes des bâtiments publics chauffés ou aérés devront être fermées.", "https://www.francetvinfo.fr/monde/environnement/convention-citoyenne-sur-le-climat/lutte-contre-les-passoires-thermiques-fin-des-terrasses-chauffees-voici-les-premieres-mesures-de-la-convention-citoyenne-pour-le-climat-retenues-par-le-gouvernement_4057589.html"],
     ],
+    "SL3.2": [
+        [Etats.ATTENTION, "Le 11 octobre 2020 - Le gouvernement se prononce contre les interdictions en principe, favorisant l'information.", "https://www.latribune.fr/economie/france/climat-le-gouvernement-compte-sur-le-score-carbone-859481.html"],
+    ],
     "SL3.4": [
         [Etats.AVANCEE, "Le 27 juillet 2020 - Création de deux PNR et d'un espace protégé (projets déjà engagés).", "https://www.francetvinfo.fr/monde/environnement/convention-citoyenne-sur-le-climat/lutte-contre-les-passoires-thermiques-fin-des-terrasses-chauffees-voici-les-premieres-mesures-de-la-convention-citoyenne-pour-le-climat-retenues-par-le-gouvernement_4057589.html"],
     ],
@@ -82,8 +97,23 @@ const actualites = {
     //      SE NOURRIR
     // —————————————————————
 
+    "SN2.1.4": [
+        [Etats.ATTENTION, "Le 11 octobre 2020 - Le gouvernement se prononce contre les interdictions en principe, favorisant l'information.", "https://www.latribune.fr/economie/france/climat-le-gouvernement-compte-sur-le-score-carbone-859481.html"],
+    ],
+    "SN2.1.7": [
+        [Etats.ATTENTION, "Le 11 octobre 2020 - Le gouvernement se prononce contre les interdictions en principe, favorisant l'information.", "https://www.latribune.fr/economie/france/climat-le-gouvernement-compte-sur-le-score-carbone-859481.html"],
+    ],
     "SN4.1.1": [
         [Etats.ATTENTION, "Le 29 juin 2020 - Discours du PR : il ne propose que de continuer à évaluer le CETA.", "https://youtu.be/m0F-uslFshA?t=768"]
+    ],
+    "SN5.2.2": [
+        [Etats.ATTENTION, "Le 11 octobre 2020 - Le gouvernement se prononce contre les interdictions en principe, favorisant l'information.", "https://www.latribune.fr/economie/france/climat-le-gouvernement-compte-sur-le-score-carbone-859481.html"],
+    ],
+    "SN6.1.2": [
+        [Etats.ATTENTION, "Le 11 octobre 2020 - Le gouvernement se prononce contre les interdictions en principe, favorisant l'information.", "https://www.latribune.fr/economie/france/climat-le-gouvernement-compte-sur-le-score-carbone-859481.html"],
+    ],
+    "SN6.1.3": [
+        [Etats.ATTENTION, "Le 11 octobre 2020 - Le gouvernement se prononce contre les interdictions en principe, favorisant l'information.", "https://www.latribune.fr/economie/france/climat-le-gouvernement-compte-sur-le-score-carbone-859481.html"],
     ],
     "SN7.1": [
         [Etats.JOKER, "Le 30 juin 2020 - Nicole Belloubet rejette la mesure.", "https://www.franceinter.fr/emissions/l-invite-de-8h20-le-grand-entretien/l-invite-de-8h20-le-grand-entretien-30-juin-2020"]
