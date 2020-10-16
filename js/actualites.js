@@ -56,6 +56,7 @@ const actualites = {
     "SD-C1.2": [
         [Etats.ATTENTION, "Le 09 juillet 2020 - Proposé lors du projet de loi de finances mais rejeté par la majorité.", "https://reporterre.net/Budget-les-deputes-ne-prennent-pas-en-compte-les-mesures-de-la-Convention-climat"],
         [Etats.ATTENTION, "Le 28 septembre 2020 - La proposition de figure pas dans le projet de budget.", "https://mobile.francetvinfo.fr/monde/environnement/convention-citoyenne-sur-le-climat/climat-sept-propositions-de-la-convention-citoyenne-ecartees-par-le-gouvernement-malgre-la-promesse-d-emmanuel-macron_4123179.amp?s=09"],
+        [Etats.FAIT, "Le 15 octobre 2020 - Un amendement au projet de finance introduit une taxe sur les véhicules de plus de 1800kg. (Ambition CCC: 1400kg).", "https://www.lesechos.fr/economie-france/budget-fiscalite/le-gouvernement-va-instaurer-un-nouveau-malus-automobile-lie-au-poids-1255765"],
     ],
     "SD-C1.3": [
         [Etats.ATTENTION, "Le 11 octobre 2020 - Le gouvernement se prononce contre les interdictions en principe, favorisant l'information.", "https://www.latribune.fr/economie/france/climat-le-gouvernement-compte-sur-le-score-carbone-859481.html"],
