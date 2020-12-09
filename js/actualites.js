@@ -101,6 +101,9 @@ const actualites = {
     //      SE NOURRIR
     // —————————————————————
 
+    "SN1.1.6": [
+        [Etats.JOKER, "Le 7 décembre 2020 - L'option végétarienne dans les cantines sera une expérimentation facultative.", "https://www.l214.com/communications/20201208-mesures-convention-citoyenne-climat-repas-viande-vegetarien"]
+    ],
     "SN2.1.4": [
         [Etats.ATTENTION, "Le 11 octobre 2020 - Le gouvernement se prononce contre les interdictions en principe, favorisant l'information.", "https://www.latribune.fr/economie/france/climat-le-gouvernement-compte-sur-le-score-carbone-859481.html"],
     ],
