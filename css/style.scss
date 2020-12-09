@@ -46,14 +46,14 @@ $ordi2: 1440px;
 }
 
 @font-face {
-  font-family: "jbMono";
-  src: url("https://raw.githubusercontent.com/JetBrains/JetBrainsMono/master/web/woff/JetBrainsMono-Regular.woff") format('woff');
+  font-family: "JetBrains Mono";
+  src: url("https://raw.githubusercontent.com/JetBrains/JetBrainsMono/master/fonts/webfonts/JetBrainsMono-Regular.woff2") format('woff2');
 }
 
 body {
   background-color: $couleur-fond;
   color: $couleur-clair;
-  font-family: jbMono, monospace;
+  font-family: "JetBrains Mono", monospace;
   font-size: $police-moyenne-tel;
   padding: 32px 16px;
 
