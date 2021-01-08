@@ -49,7 +49,9 @@ $ordi2: 1440px;
   font-family: "JetBrains Mono";
   src: url("https://raw.githubusercontent.com/JetBrains/JetBrainsMono/master/fonts/webfonts/JetBrainsMono-Regular.woff2") format('woff2');
 }
-
+html {
+  scroll-behavior: smooth;
+}
 body {
   background-color: $couleur-fond;
   color: $couleur-clair;
@@ -198,7 +200,7 @@ header {
 }
 
 .thematique {
-  margin-top: 64px;
+  padding-top: 64px;
 
   .titre {
     font-size: $police-grande-tel;

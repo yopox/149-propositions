@@ -1,4 +1,4 @@
-var propositions = [
+const propositions = [
     "PROPOSITION C1.1 : Développer puis mettre en place un score carbone sur tous les produits de consommation et les services.",
     "PROPOSITION C1.2 : Rendre obligatoire l'affichage des émissions de gaz à effet de serre dans les commerces et lieux de consommation ainsi que dans les publicités pour les marques.",
     "PROPOSITION C2.1 : Interdire de manière efficace et opérante la publicité des produits les plus émetteurs de GES, sur tous les supports publicitaires.",

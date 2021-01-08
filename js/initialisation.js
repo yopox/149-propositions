@@ -8,9 +8,12 @@ let statutsCompte = {
     "": 0
 };
 
+let propositionsId = [];
 for (const i in propositions) {
     // Regex
     let resultats = re.exec(propositions[i]);
+    let propositionId = (resultats[2] + resultats[3]).replace('.', '-');
+    propositionsId.push(propositionId);
 
     // Propositions de la thématique
     let parent = document.getElementsByClassName(resultats[2])[0];
@@ -18,11 +21,12 @@ for (const i in propositions) {
     // Création de l'élément button.proposition
     let proposition = document.createElement("button");
     proposition.classList.add("proposition");
+    proposition.setAttribute("data-id", propositionId);
     proposition.appendChild(document.createTextNode(resultats[2]));
     proposition.appendChild(document.createElement("br"));
     proposition.appendChild(document.createTextNode(resultats[3]));
-
-    proposition.addEventListener("focus", () => {
+    proposition.onclick = () => {
+        history.pushState("", document.title, window.location.pathname + '#' + propositionId);
         proposition.title = "";
 
         // MAJ élément sélectionné
@@ -56,7 +60,7 @@ for (const i in propositions) {
 
         // Détails : actus
         let actus = actualites[resultats[1]];
-        actus.forEach(actu => {
+        actus?.forEach(actu => {
             let detailsActu = document.createElement("div");
             detailsActu.classList.add("actualite", actu[0]);
             detailsActu.textContent = actu[1];
@@ -69,7 +73,7 @@ for (const i in propositions) {
             detailsActu.appendChild(detailsActuSource);
             details.appendChild(detailsActu);
         });
-    });
+    };
 
     // État
     let actu = actualites[resultats[1]];
@@ -97,3 +101,21 @@ function etatProposition (listeEtats) {
     return state;
 }
 
+let hash = window.location.hash.substr(1);
+
+setTimeout(
+    () => {
+
+        if (hash.length && propositionsId.includes(hash)) {
+            const re = /([A-Z]+)/;
+
+            let thematique = document.querySelector(`#${re.exec(hash)[0]}`);
+            document.documentElement.scrollTo(0, thematique.getBoundingClientRect().top);
+
+            let element = document.querySelector(`[data-id="${hash}"]`);
+            element.focus();
+        } else {
+            history.pushState("", document.title, window.location.pathname + '');
+        }
+    }, 300
+);
