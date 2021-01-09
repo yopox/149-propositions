@@ -49,9 +49,11 @@ $ordi2: 1440px;
   font-family: "JetBrains Mono";
   src: url("https://raw.githubusercontent.com/JetBrains/JetBrainsMono/master/fonts/webfonts/JetBrainsMono-Regular.woff2") format('woff2');
 }
+
 html {
   scroll-behavior: smooth;
 }
+
 body {
   background-color: $couleur-fond;
   color: $couleur-clair;
@@ -248,6 +250,12 @@ header {
 
 }
 
+.details {
+  div + div {
+    margin-top: 16px;
+  }
+}
+
 .proposition {
   width: 48px;
   height: 48px;
@@ -256,7 +264,6 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: $couleur-proposition;
   border-radius: 12px;
   cursor: pointer;
   box-sizing: border-box;
@@ -273,21 +280,24 @@ header {
     border: 2px solid $couleur-vert;
   }
 
-  &--joker {
-    background-color: $couleur-joker;
+  &--etat {
+    &--joker {
+      background-color: $couleur-joker;
+    }
+
+    &--reticence {
+      background-color: $couleur-attention;
+    }
+
+    &--fait {
+      background-color: $couleur-fait;
+    }
+
+    &--attente {
+      background-color: $couleur-proposition;
+    }
   }
 
-  &--attention {
-    background-color: $couleur-attention;
-  }
-
-  &--bien {
-    background-color: $couleur-bien;
-  }
-
-  &--fait {
-    background-color: $couleur-fait;
-  }
 }
 
 .retour-en-haut {

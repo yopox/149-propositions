@@ -58,27 +58,27 @@ propositions.forEach((contenu, id) => {
         proposition.title += resultats[0] + "\n";
 
         // Détails : actus
-        let actus = actualites[resultats[1]];
-        actus?.forEach(actu => {
-            let detailsActu = document.createElement("div");
-            detailsActu.classList.add("actualite", actu[0]);
-            detailsActu.textContent = actu[1];
-            proposition.title += actu[1];
-            let detailsActuSource = document.createElement("a");
-            detailsActuSource.href = actu[2];
-            detailsActuSource.target = "_blank";
-            detailsActuSource.rel = "noopener";
-            detailsActuSource.textContent = "[source]";
-            detailsActu.appendChild(detailsActuSource);
-            details.appendChild(detailsActu);
-        });
+        if (informations[id]) {
+            informations[id].actus?.forEach(actu => {
+                let detailsActu = document.createElement("div");
+                detailsActu.textContent = actu[0];
+                proposition.title += actu[0];
+                let detailsActuSource = document.createElement("a");
+                detailsActuSource.href = actu[1];
+                detailsActuSource.target = "_blank";
+                detailsActuSource.rel = "noopener";
+                detailsActuSource.textContent = "[source]";
+                detailsActu.appendChild(detailsActuSource);
+                details.appendChild(detailsActu);
+            });
+        }
     };
 
     // État
-    let actu = actualites[resultats[1]];
-    let statut = etatProposition(actu);
-    if (statut !== "") proposition.classList.add('proposition--' + statut);
-    statutsCompte[statut] += 1;
+    let etat = Etat.ATTENTE;
+    if (informations[id]) etat = informations[id].etat || Etat.ATTENTE;
+    proposition.classList.add('proposition--etat--' + etat);
+    statutsCompte[etat] += 1;
 
     parent.appendChild(proposition);
 });
@@ -88,17 +88,6 @@ document.getElementById("bien").textContent = statutsCompte["bien"];
 document.getElementById("attente").textContent = statutsCompte[""];
 document.getElementById("attention").textContent = statutsCompte["attention"];
 document.getElementById("joker").textContent = statutsCompte["joker"];
-
-function etatProposition (listeEtats) {
-    let state = Etats.ATTENTE;
-    for (const i in listeEtats) {
-        if (listeEtats[i][0] === Etats.FAIT) return Etats.FAIT;
-        if (listeEtats[i][0] === Etats.JOKER) return Etats.JOKER;
-        if (listeEtats[i][0] === Etats.AVANCEE && state !== Etats.ATTENTION) state = Etats.AVANCEE;
-        if (listeEtats[i][0] === Etats.ATTENTION) state = Etats.ATTENTION;
-    }
-    return state;
-}
 
 let hash = window.location.hash.substr(1);
 
