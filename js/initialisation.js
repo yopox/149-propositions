@@ -1,4 +1,4 @@
-const re = /PROPOSITION (([A-Z.-]+)([0-9.]+)) : (.*)/;
+const re = /(([A-Z.-]+)([0-9.]+))/;
 
 let statutsCompte = {
     "joker": 0,
@@ -9,11 +9,10 @@ let statutsCompte = {
 };
 
 let propositionsId = [];
-for (const i in propositions) {
+propositions.forEach((contenu, id) => {
     // Regex
-    let resultats = re.exec(propositions[i]);
-    let propositionId = (resultats[2] + resultats[3]).replace('.', '-');
-    propositionsId.push(propositionId);
+    let resultats = re.exec(id);
+    propositionsId.push(id);
 
     // Propositions de la thématique
     let parent = document.getElementsByClassName(resultats[2])[0];
@@ -21,12 +20,12 @@ for (const i in propositions) {
     // Création de l'élément button.proposition
     let proposition = document.createElement("button");
     proposition.classList.add("proposition");
-    proposition.setAttribute("data-id", propositionId);
+    proposition.setAttribute("data-id", id);
     proposition.appendChild(document.createTextNode(resultats[2]));
     proposition.appendChild(document.createElement("br"));
     proposition.appendChild(document.createTextNode(resultats[3]));
     proposition.onclick = () => {
-        history.pushState("", document.title, window.location.pathname + '#' + propositionId);
+        history.pushState("", document.title, window.location.pathname + '#' + id);
         proposition.title = "";
 
         // MAJ élément sélectionné
@@ -54,7 +53,7 @@ for (const i in propositions) {
         // Détails : titre
         let detailsTitre = document.createElement("div");
         detailsTitre.classList.add("nom-proposition");
-        detailsTitre.textContent = resultats[0];
+        detailsTitre.textContent = `PROPOSITION ${id} : ${contenu}`;
         details.appendChild(detailsTitre);
         proposition.title += resultats[0] + "\n";
 
@@ -82,7 +81,7 @@ for (const i in propositions) {
     statutsCompte[statut] += 1;
 
     parent.appendChild(proposition);
-}
+});
 
 document.getElementById("fait").textContent = statutsCompte["fait"];
 document.getElementById("bien").textContent = statutsCompte["bien"];
@@ -106,7 +105,7 @@ let hash = window.location.hash.substr(1);
 setTimeout(
     () => {
 
-        if (hash.length && propositionsId.includes(hash)) {
+        if (hash.length && propositions.get(hash)) {
             const re = /([A-Z]+)/;
 
             let thematique = document.querySelector(`#${re.exec(hash)[0]}`);
