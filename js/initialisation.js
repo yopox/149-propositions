@@ -109,7 +109,7 @@ setTimeout(
             const re = /([A-Z]+)/;
 
             let thematique = document.querySelector(`#${re.exec(hash)[0]}`);
-            document.documentElement.scrollTo(0, thematique.getBoundingClientRect().top);
+            document.documentElement.scrollTo(0, thematique.getBoundingClientRect().y + document.documentElement.scrollTop);
 
             let element = document.querySelector(`[data-id="${hash}"]`);
             element.click();
