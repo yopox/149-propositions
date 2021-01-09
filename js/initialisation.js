@@ -113,7 +113,7 @@ setTimeout(
             document.documentElement.scrollTo(0, thematique.getBoundingClientRect().top);
 
             let element = document.querySelector(`[data-id="${hash}"]`);
-            element.focus();
+            element.click();
         } else {
             history.pushState("", document.title, window.location.pathname + '');
         }
