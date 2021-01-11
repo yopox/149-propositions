@@ -16,7 +16,7 @@ const propositions = new Map([
     ["PT1.1", "Conception : Augmenter la longévité des produits et réduire la pollution."],
     ["PT1.2", "Faire respecter la loi sur l'interdiction de l'obsolescence programmée."],
     ["PT1.3", "Rendre obligatoire la possibilité de réparation des produits manufacturés qui sont vendus en France (1), la disponibilité des pièces détachées d'origine pendant une durée définie (2). Mettre en place et à proximité des filières et ateliers de réparation, et rendre accessibles les services après-vente (3)."],
-    ["PT1.4", "Rendre obligatoire le recyclage de tous les objets en plastique dès 2023,supprimer tous les plastiques à usage unique dès 2023 et développer le recyclage des autres matières."],
+    ["PT1.4", "Rendre obligatoire le recyclage de tous les objets en plastique dès 2023, supprimer tous les plastiques à usage unique dès 2023 et développer le recyclage des autres matières."],
     ["PT1.5", "Durcir et appliquer la réglementation sur la gestion des déchets."],
     ["PT2.1", "D'ici 2025 tout soutien à l'innovation doit s'inscrire dans une logique de sortie d'un modèle basé sur le carbone."],
     ["PT3.1", "Réglementer l'utilisation de l'épargne réglementée gérée par la Caisse des Dépôts et Consignations (CDC) et les banques pour financer des investissements verts - Faire évoluer la gouvernance de la CDC pour soutenir cette logique."],
