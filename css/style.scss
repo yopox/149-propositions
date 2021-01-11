@@ -1,11 +1,15 @@
 $couleur-fond: #222;
 $couleur-proposition: #333;
-$couleur-joker: #633;
+$couleur-joker: #663333;
 $couleur-attention: #664d33;
 $couleur-bien: #336;
 $couleur-fait: #363;
-$couleur-vert: #b3fcd4;
-$couleur-clair: #ccc;
+$couleur-vert: #b3fcbd;
+$couleur-clair: #cccccc;
+
+$couleur-pastille-verte: #83e369;
+$couleur-pastille-grise: #b5a6a6;
+$couleur-pastille-rouge: #e36969;
 
 $police-grande-ordi2: 36px;
 $police-grande-ordi: 32px;
@@ -279,6 +283,11 @@ header {
 
   &--selectionne, &:hover, &:focus {
     border: 2px solid $couleur-vert;
+
+    .ambition {
+      top: -10px;
+      right: -10px;
+    }
   }
 
   &--etat {
@@ -296,6 +305,26 @@ header {
 
     &--attente {
       background-color: $couleur-proposition;
+    }
+  }
+
+  .ambition {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    width: 16px;
+    height: 16px;
+    border-radius: 16px;
+    border: 2px solid $couleur-proposition;
+
+    &--bonne {
+      background-color: $couleur-pastille-verte;
+    }
+    &--inconnue {
+      background-color: $couleur-pastille-grise;
+    }
+    &--decevante {
+      background-color: $couleur-pastille-rouge;
     }
   }
 

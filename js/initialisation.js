@@ -24,6 +24,33 @@ propositions.forEach((contenu, id) => {
     proposition.appendChild(document.createTextNode(resultats[2]));
     proposition.appendChild(document.createElement("br"));
     proposition.appendChild(document.createTextNode(resultats[3]));
+
+    // Pastilles
+    let infos = informations[id];
+    if (infos) {
+        let ambition = infos.ambition;
+        console.log(ambition);
+        let vehicule = infos.vehicule;
+
+        if (ambition) {
+            let ambitionDiv = document.createElement("div");
+            ambitionDiv.classList.add("ambition");
+            switch (ambition) {
+                case Ambition.BONNE:
+                    ambitionDiv.classList.add("ambition--bonne");
+                    break;
+                case Ambition.DECEVANTE:
+                    ambitionDiv.classList.add("ambition--decevante");
+                    break;
+                case Ambition.INCONNUE:
+                    ambitionDiv.classList.add("ambition--inconnue");
+                    break;
+            }
+            proposition.appendChild(ambitionDiv);
+        }
+
+    }
+
     proposition.onclick = () => {
         history.pushState("", document.title, window.location.pathname + '#' + id);
         proposition.title = "";
@@ -58,8 +85,8 @@ propositions.forEach((contenu, id) => {
         proposition.title += resultats[0] + "\n";
 
         // Détails : actus
-        if (informations[id]) {
-            informations[id].actus?.forEach(actu => {
+        if (infos) {
+            infos.actus?.forEach(actu => {
                 let detailsActu = document.createElement("div");
                 detailsActu.textContent = actu[0];
                 proposition.title += actu[0];
@@ -76,7 +103,7 @@ propositions.forEach((contenu, id) => {
 
     // État
     let etat = Etat.ATTENTE;
-    if (informations[id]) etat = informations[id].etat || Etat.ATTENTE;
+    if (infos) etat = infos.etat || Etat.ATTENTE;
     proposition.classList.add('proposition--etat--' + etat);
     statutsCompte[etat] += 1;
 

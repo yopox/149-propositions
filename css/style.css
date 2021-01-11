@@ -8,7 +8,7 @@ html {
 
 body {
   background-color: #222;
-  color: #ccc;
+  color: #cccccc;
   font-family: "JetBrains Mono", monospace;
   font-size: 14px;
   padding: 32px 16px;
@@ -1748,7 +1748,7 @@ header {
   justify-content: center;
   margin: 16px 0;
   padding: 16px;
-  border: 2px solid #b3fcd4;
+  border: 2px solid #b3fcbd;
 }
 
 .details div + div {
@@ -1766,7 +1766,7 @@ header {
   border-radius: 12px;
   cursor: pointer;
   box-sizing: border-box;
-  color: #ccc;
+  color: #cccccc;
   border: none;
 }
 @media (min-width: 768px) {
@@ -1777,10 +1777,14 @@ header {
   }
 }
 .proposition--selectionne, .proposition:hover, .proposition:focus {
-  border: 2px solid #b3fcd4;
+  border: 2px solid #b3fcbd;
+}
+.proposition--selectionne .ambition, .proposition:hover .ambition, .proposition:focus .ambition {
+  top: -10px;
+  right: -10px;
 }
 .proposition--etat--joker {
-  background-color: #633;
+  background-color: #663333;
 }
 .proposition--etat--reticence {
   background-color: #664d33;
@@ -1790,6 +1794,24 @@ header {
 }
 .proposition--etat--attente {
   background-color: #333;
+}
+.proposition .ambition {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  width: 16px;
+  height: 16px;
+  border-radius: 16px;
+  border: 2px solid #333;
+}
+.proposition .ambition--bonne {
+  background-color: #83e369;
+}
+.proposition .ambition--inconnue {
+  background-color: #b5a6a6;
+}
+.proposition .ambition--decevante {
+  background-color: #e36969;
 }
 
 .retour-en-haut {
@@ -1820,7 +1842,7 @@ footer a {
   }
 }
 footer #contribuer {
-  color: #b3fcd4;
+  color: #b3fcbd;
 }
 
 @keyframes anim-fade-up {
