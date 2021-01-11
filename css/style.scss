@@ -103,15 +103,16 @@ body {
   justify-content: start;
 
   #resume {
-    margin-bottom: 32px;
+    //margin-bottom: 32px;
   }
 
   #progres-conteneur {
-    display: flex;
+    visibility: hidden;
+    display: none;
     flex-flow: row;
     justify-content: center;
     @include pas-tel {
-      display: block;
+      display: none;
     }
   }
 
