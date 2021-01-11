@@ -1779,9 +1779,15 @@ header {
 .proposition--selectionne, .proposition:hover, .proposition:focus {
   border: 2px solid #b3fcbd;
 }
-.proposition--selectionne .ambition, .proposition:hover .ambition, .proposition:focus .ambition {
-  top: -10px;
-  right: -10px;
+.proposition--selectionne .pastille, .proposition:hover .pastille, .proposition:focus .pastille {
+  top: -9px !important;
+  right: -9px !important;
+}
+@media (min-width: 768px) {
+  .proposition--selectionne .pastille, .proposition:hover .pastille, .proposition:focus .pastille {
+    top: -12px !important;
+    right: -12px !important;
+  }
 }
 .proposition--etat--joker {
   background-color: #663333;
@@ -1795,22 +1801,34 @@ header {
 .proposition--etat--attente {
   background-color: #333;
 }
-.proposition .ambition {
+.proposition .pastille {
   position: absolute;
-  top: -8px;
-  right: -8px;
-  width: 16px;
-  height: 16px;
+  top: -7px;
+  right: -7px;
+  width: 18px;
+  height: 18px;
+  line-height: 19px;
   border-radius: 16px;
   border: 2px solid #333;
+  color: #222;
+  font-weight: bold;
 }
-.proposition .ambition--bonne {
+@media (min-width: 768px) {
+  .proposition .pastille {
+    top: -10px;
+    right: -10px;
+    width: 24px;
+    height: 24px;
+    line-height: 24px;
+  }
+}
+.proposition .pastille--bonne {
   background-color: #83e369;
 }
-.proposition .ambition--inconnue {
+.proposition .pastille--inconnue {
   background-color: #b5a6a6;
 }
-.proposition .ambition--decevante {
+.proposition .pastille--decevante {
   background-color: #e36969;
 }
 
