@@ -5,7 +5,7 @@ $couleur-attention: #664d33;
 $couleur-bien: #336;
 $couleur-fait: #363;
 $couleur-vert: #b3fcbd;
-$couleur-clair: #cccccc;
+$couleur-texte: #cccccc;
 
 $couleur-pastille-verte: #83e369;
 $couleur-pastille-grise: #b5a6a6;
@@ -60,7 +60,7 @@ html {
 
 body {
   background-color: $couleur-fond;
-  color: $couleur-clair;
+  color: $couleur-texte;
   font-family: "JetBrains Mono", monospace;
   font-size: $police-moyenne-tel;
   padding: 32px 16px;
@@ -272,7 +272,7 @@ header {
   border-radius: 12px;
   cursor: pointer;
   box-sizing: border-box;
-  color: $couleur-clair;
+  color: $couleur-texte;
   border: none;
 
   @include pas-tel {
@@ -284,9 +284,14 @@ header {
   &--selectionne, &:hover, &:focus {
     border: 2px solid $couleur-vert;
 
-    .ambition {
-      top: -10px;
-      right: -10px;
+    .pastille {
+      top: -9px !important;
+      right: -9px !important;
+
+      @include pas-tel {
+        top: -12px !important;
+        right: -12px !important;
+      }
     }
   }
 
@@ -308,21 +313,34 @@ header {
     }
   }
 
-  .ambition {
+  .pastille {
     position: absolute;
-    top: -8px;
-    right: -8px;
-    width: 16px;
-    height: 16px;
+    top: -7px;
+    right: -7px;
+    width: 18px;
+    height: 18px;
+    line-height: 19px;
     border-radius: 16px;
     border: 2px solid $couleur-proposition;
+    color: $couleur-fond;
+    font-weight: bold;
+
+    @include pas-tel {
+      top: -10px;
+      right: -10px;
+      width: 24px;
+      height: 24px;
+      line-height: 24px;
+    }
 
     &--bonne {
       background-color: $couleur-pastille-verte;
     }
+
     &--inconnue {
       background-color: $couleur-pastille-grise;
     }
+
     &--decevante {
       background-color: $couleur-pastille-rouge;
     }

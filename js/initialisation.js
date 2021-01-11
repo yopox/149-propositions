@@ -32,21 +32,45 @@ propositions.forEach((contenu, id) => {
         console.log(ambition);
         let vehicule = infos.vehicule;
 
-        if (ambition) {
-            let ambitionDiv = document.createElement("div");
-            ambitionDiv.classList.add("ambition");
+        let pastille = null;
+        if (ambition || vehicule) {
+            pastille = document.createElement("div");
+            pastille.classList.add("pastille");
+            proposition.appendChild(pastille);
+        }
+
+        if (pastille && ambition) {
             switch (ambition) {
                 case Ambition.BONNE:
-                    ambitionDiv.classList.add("ambition--bonne");
+                    pastille.classList.add("pastille--bonne");
                     break;
                 case Ambition.DECEVANTE:
-                    ambitionDiv.classList.add("ambition--decevante");
+                    pastille.classList.add("pastille--decevante");
                     break;
                 case Ambition.INCONNUE:
-                    ambitionDiv.classList.add("ambition--inconnue");
+                    pastille.classList.add("pastille--inconnue");
                     break;
             }
-            proposition.appendChild(ambitionDiv);
+        }
+
+        if (pastille && vehicule) {
+            switch (vehicule) {
+                case Vehicule.DECRET:
+                    pastille.appendChild(document.createTextNode("D"));
+                    break;
+                case Vehicule.LOI:
+                    pastille.appendChild(document.createTextNode("L"));
+                    break;
+                case Vehicule.ORDONNANCE:
+                    pastille.appendChild(document.createTextNode("O"));
+                    break;
+                case Vehicule.EUROPE:
+                    pastille.appendChild(document.createTextNode("E"));
+                    break;
+                case Vehicule.INCONNU:
+                    pastille.appendChild(document.createTextNode("?"));
+                    break;
+            }
         }
 
     }

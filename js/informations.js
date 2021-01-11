@@ -74,6 +74,7 @@ const informations = {
     },
     "PT1.3": {
         vehicule: Vehicule.DECRET,
+        ambition: Ambition.DECEVANTE,
         actus: [
             ["Le 8 janvier 2021 - Projet de loi climat (article 13) : Le point (2) est repris : La disponibilité des pièces détachées est définie par un décret du Conseil d'État.", "TREX"],
         ]
