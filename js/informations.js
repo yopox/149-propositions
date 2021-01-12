@@ -405,6 +405,13 @@ const informations = {
             ["Le 11 octobre 2020 - Le gouvernement se prononce contre les interdictions en principe, favorisant l'information.", "https://www.latribune.fr/economie/france/climat-le-gouvernement-compte-sur-le-score-carbone-859481.html"],
         ]
     },
+    "SN2.1.5": {
+        vehicule: Vehicule.LOI,
+        ambition: Ambition.DECEVANTE,
+        actus: [
+            ["Le 8 janvier 2021 - Projet de loi climat (article 60 et 61) : Le Plan Protéines Végétales n'est pas repris.", "TREX"],
+        ]
+    },
     "SN2.1.7": {
         actus: [
             ["Le 11 octobre 2020 - Le gouvernement se prononce contre les interdictions en principe, favorisant l'information.", "https://www.latribune.fr/economie/france/climat-le-gouvernement-compte-sur-le-score-carbone-859481.html"],
@@ -413,6 +420,13 @@ const informations = {
     "SN4.1.1": {
         actus: [
             ["Le 29 juin 2020 - Discours du PR : il ne propose que de continuer à évaluer le CETA.", "https://youtu.be/m0F-uslFshA?t=768"],
+        ]
+    },
+    "SN5.2.1": {
+        vehicule: Vehicule.LOI,
+        ambition: Ambition.BONNE,
+        actus: [
+            ["Le 8 janvier 2021 - Projet de loi climat (article 58) : La proposition est reprise.", "TREX"],
         ]
     },
     "SN5.2.2": {
