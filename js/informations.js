@@ -67,11 +67,6 @@ const informations = {
     // PRODUIRE & TRAVAILLER
     // —————————————————————
 
-    "PT1.2": {
-        actus: [
-            ["Le 11 octobre 2020 - Le gouvernement se prononce contre les interdictions en principe, favorisant l'information.", "https://www.latribune.fr/economie/france/climat-le-gouvernement-compte-sur-le-score-carbone-859481.html"],
-        ]
-    },
     "PT1.3": {
         vehicule: Vehicule.DECRET,
         ambition: Ambition.DECEVANTE,
