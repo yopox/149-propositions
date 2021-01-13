@@ -34,6 +34,12 @@ const informations = {
             ["Le 8 janvier 2021 - Projet de loi climat (article 6) : Le pouvoir de police de la publicité sera effecté par le maire. + articles 7 à 10", "TREX"],
         ]
     },
+    "C2.3": {
+        etat: Etat.JOKER,
+        actus: [
+            ["Le 8 janvier 2021 - Proposition d'ordre législatif absente du projet de loi climat.", "TREX"],
+        ]
+    },
     "C3.1": {
         vehicule: Vehicule.LOI,
         ambition: Ambition.BONNE,
@@ -46,6 +52,12 @@ const informations = {
         ambition: Ambition.BONNE,
         actus: [
             ["Le 8 janvier 2021 - Projet de loi climat (article 12) : La proposition est reprise.", "TREX"],
+        ]
+    },
+    "C3.4": {
+        etat: Etat.JOKER,
+        actus: [
+            ["Le 8 janvier 2021 - Proposition d'ordre législatif absente du projet de loi climat.", "TREX"],
         ]
     },
     "C5.1": {
@@ -101,6 +113,12 @@ const informations = {
             ["Le 8 janvier 2021 - Projet de loi climat (article 16 et 17) : La proposition est reprise.", "TREX"],
         ]
     },
+    "PT6.1": {
+        etat: Etat.JOKER,
+        actus: [
+            ["Le 8 janvier 2021 - Proposition d'ordre législatif absente du projet de loi climat.", "TREX"],
+        ]
+    },
     "PT6.3": {
         actus: [
             ["Le 09 juillet 2020 - Les engagements climatiques des entreprises relèvent du volontariat.", "https://reporterre.net/Budget-les-deputes-ne-prennent-pas-en-compte-les-mesures-de-la-Convention-climat"],
@@ -111,6 +129,13 @@ const informations = {
         ambition: Ambition.BONNE,
         actus: [
             ["Le 8 janvier 2021 - Projet de loi climat (article 15) : Les acheteurs publics devront prendre en compte des considérations environnementales.", "TREX"],
+        ]
+    },
+    "PT8.1": {
+        vehicule: Vehicule.LOI,
+        ambition: Ambition.BONNE,
+        actus: [
+            ["Le 8 janvier 2021 - Projet de loi climat (article 54) : Aires protégées.", "TREX"],
         ]
     },
     "PT8.3": {
@@ -131,7 +156,14 @@ const informations = {
         vehicule: Vehicule.LOI,
         ambition: Ambition.BONNE,
         actus: [
-            ["Le 8 janvier 2021 - Projet de loi climat (article 21 et 22) : La proposition est reprise.", "TREX"],
+            ["Le 8 janvier 2021 - Projet de loi climat (article 21) : La proposition est reprise.", "TREX"],
+        ]
+    },
+    "PT11.2": {
+        vehicule: Vehicule.LOI,
+        ambition: Ambition.BONNE,
+        actus: [
+            ["Le 8 janvier 2021 - Projet de loi climat (article 22) : La proposition est reprise.", "TREX"],
         ]
     },
     "PT11.3": {
@@ -285,6 +317,12 @@ const informations = {
             ["Le 8 janvier 2021 - Projet de loi climat (article 36) : Les extensions seront encadrées.", "TREX"],
         ]
     },
+    "SD-E4": {
+        etat: Etat.JOKER,
+        actus: [
+            ["Le 08 octobre 2020 - Un amendement au projet de loi de finances reprenant la proposition est rejeté.", "https://www.assemblee-nationale.fr/dyn/15/amendements/3360A/AN/2070"],
+        ]
+    },
     "SD-E5": {
         vehicule: Vehicule.EUROPE,
         ambition: Ambition.BONNE,
@@ -322,7 +360,7 @@ const informations = {
             ["Le 09 juillet 2020 - Proposé lors du projet de loi de finances mais rejeté par la majorité.", "https://reporterre.net/Budget-les-deputes-ne-prennent-pas-en-compte-les-mesures-de-la-Convention-climat"],
         ]
     },
-    "SL2.3": {
+    "SL2.1": {
         vehicule: Vehicule.LOI,
         ambition: Ambition.BONNE,
         actus: [
@@ -334,24 +372,50 @@ const informations = {
         vehicule: Vehicule.LOI,
         ambition: Ambition.BONNE,
         actus: [
-            ["Le 8 janvier 2021 - Projet de loi climat (article 46 et 47) : La proposition est reprise.", "TREX"],
+            ["Le 8 janvier 2021 - Projet de loi climat (article 46, 47, 48 et 49) : La proposition est reprise.", "TREX"],
         ]
     },
     "SL3.2": {
+        vehicule: Vehicule.LOI,
+        ambition: Ambition.DECEVANTE,
         actus: [
             ["Le 11 octobre 2020 - Le gouvernement se prononce contre les interdictions en principe, favorisant l'information.", "https://www.latribune.fr/economie/france/climat-le-gouvernement-compte-sur-le-score-carbone-859481.html"],
+            ["Le 8 janvier 2021 - Projet de loi climat (article 51) : La proposition est reprise.", "TREX"],
         ]
     },
     "SL3.3": {
         vehicule: Vehicule.LOI,
         ambition: Ambition.BONNE,
         actus: [
-            ["Le 8 janvier 2021 - Projet de loi climat (article 50) : La proposition est reprise (avec une exception conditionnée pour des surfaces inférieures à 10 000m2).", "TREX"],
+            ["Le 8 janvier 2021 - Projet de loi climat (article 48 et 50) : La proposition est reprise (avec une exception conditionnée pour des surfaces inférieures à 10 000m2).", "TREX"],
         ]
     },
     "SL3.4": {
+        vehicule: Vehicule.LOI,
+        ambition: Ambition.DECEVANTE,
         actus: [
             ["Le 27 juillet 2020 - Création de deux PNR et d'un espace protégé (projets déjà engagés).", "https://www.francetvinfo.fr/monde/environnement/convention-citoyenne-sur-le-climat/lutte-contre-les-passoires-thermiques-fin-des-terrasses-chauffees-voici-les-premieres-mesures-de-la-convention-citoyenne-pour-le-climat-retenues-par-le-gouvernement_4057589.html"],
+            ["Le 8 janvier 2021 - Projet de loi climat (article 54 et 55) : Fixation dans la loi des aires protégées.", "TREX"],
+        ]
+    },
+    "SL3.5": {
+        vehicule: Vehicule.LOI,
+        ambition: Ambition.BONNE,
+        actus: [
+            ["Le 8 janvier 2021 - Projet de loi climat (article 51) : La proposition est reprise.", "TREX"],
+        ]
+    },
+    "SL3.6": {
+        etat: Etat.JOKER,
+        actus: [
+            ["Le 8 janvier 2021 - Proposition d'ordre législatif absente du projet de loi climat.", "TREX"],
+        ]
+    },
+    "SL3.7": {
+        vehicule: Vehicule.LOI,
+        ambition: Ambition.BONNE,
+        actus: [
+            ["Le 8 janvier 2021 - Projet de loi climat (article 51) : La proposition est reprise.", "TREX"],
         ]
     },
     "SL3.8": {
@@ -390,7 +454,7 @@ const informations = {
     },
     "SN2.1.3": {
         vehicule: Vehicule.DECRET,
-        ambition: Ambition.INCONNUE,
+        ambition: Ambition.DECEVANTE,
         actus: [
             ["Le 8 janvier 2021 - Projet de loi climat (article 59) : La proposition est reprise.", "TREX"],
         ]
@@ -413,6 +477,7 @@ const informations = {
         ]
     },
     "SN4.1.1": {
+        etat: Etat.JOKER,
         actus: [
             ["Le 29 juin 2020 - Discours du PR : il ne propose que de continuer à évaluer le CETA.", "https://youtu.be/m0F-uslFshA?t=768"],
         ]
@@ -421,7 +486,7 @@ const informations = {
         vehicule: Vehicule.LOI,
         ambition: Ambition.BONNE,
         actus: [
-            ["Le 8 janvier 2021 - Projet de loi climat (article 58) : La proposition est reprise.", "TREX"],
+            ["Le 8 janvier 2021 - Projet de loi climat (article 58 et 61) : La proposition est reprise.", "TREX"],
         ]
     },
     "SN5.2.2": {
@@ -437,6 +502,12 @@ const informations = {
     "SN6.1.3": {
         actus: [
             ["Le 11 octobre 2020 - Le gouvernement se prononce contre les interdictions en principe, favorisant l'information.", "https://www.latribune.fr/economie/france/climat-le-gouvernement-compte-sur-le-score-carbone-859481.html"],
+        ]
+    },
+    "SN6.1.4": {
+        etat: Etat.JOKER,
+        actus: [
+            ["Le 8 janvier 2021 - Proposition d'ordre législatif absente du projet de loi climat.", "TREX"],
         ]
     },
     "SN7.1": {
