@@ -162,7 +162,8 @@ body {
     background-color: #000000;
     #{$at}-bar {
       height: 36px;
-      transition: filter .2s ease-out;
+      transition: filter .2s ease-out, width 1.8s .1s cubic-bezier(0.85, 0, 0.15, 1);
+      width: 0;
       &:hover {
         filter:brightness(1.2)
       }
