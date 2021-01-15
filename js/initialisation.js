@@ -19,8 +19,9 @@ propositions.forEach((contenu, id) => {
     // Propositions de la thématique
     let parent = document.getElementsByClassName(resultats[2])[0];
 
-    // Création de l'élément button.proposition
-    let proposition = document.createElement("button");
+    // Création de l'élément a.proposition
+    let proposition = document.createElement("a");
+    proposition.href = '#' + id;
     proposition.classList.add("proposition");
     proposition.setAttribute("data-id", id);
     proposition.appendChild(document.createTextNode(resultats[2]));
@@ -77,7 +78,6 @@ propositions.forEach((contenu, id) => {
     }
 
     proposition.onclick = () => {
-        history.pushState("", document.title, window.location.pathname + '#' + id);
         proposition.title = "";
 
         // MAJ élément sélectionné
