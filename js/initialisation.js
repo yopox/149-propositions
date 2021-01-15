@@ -1,3 +1,5 @@
+import { animateCountUp } from './utils/animateCountUp.js';
+
 const re = /(([A-Z.-]+)([0-9.]+))/;
 
 let statutsCompte = {
@@ -135,13 +137,13 @@ propositions.forEach((contenu, id) => {
 
 // Progress bars
 const getProgessionBarWidth = (indicator) => {
-    return indicator * propositions.size / 100;
+    return indicator * 100 / propositions.size;
 };
 
 const setProgressionBars = (states) => {
     states.forEach(state => {
         document.querySelector(`.progression .progression-bar.is-${state}`).style.width = getProgessionBarWidth(statutsCompte[`${state}`]) + '%';
-        document.querySelector(`.progression .legend-item.is-${state} .value`).textContent = statutsCompte[`${state}`];
+        animateCountUp(statutsCompte[`${state}`], document.querySelector(`.progression .legend-item.is-${state} .value`));
     });
 };
 setProgressionBars(['fait', 'bien', 'attente', 'attention', 'joker']);
