@@ -1,11 +1,11 @@
 const re = /(([A-Z.-]+)([0-9.]+))/;
 
 let statutsCompte = {
-    "joker": 0,
-    "attention": 0,
-    "bien": 0,
     "fait": 0,
-    "": 0
+    "bien": 0,
+    "attention": 0,
+    "joker": 0,
+    "attente": 0
 };
 
 let propositionsId = [];
@@ -29,7 +29,6 @@ propositions.forEach((contenu, id) => {
     let infos = informations[id];
     if (infos) {
         let ambition = infos.ambition;
-        console.log(ambition);
         let vehicule = infos.vehicule;
 
         let pastille = null;
@@ -134,17 +133,23 @@ propositions.forEach((contenu, id) => {
     parent.appendChild(proposition);
 });
 
-document.getElementById("fait").textContent = statutsCompte["fait"];
-document.getElementById("bien").textContent = statutsCompte["bien"];
-document.getElementById("attente").textContent = statutsCompte[""];
-document.getElementById("attention").textContent = statutsCompte["attention"];
-document.getElementById("joker").textContent = statutsCompte["joker"];
+// Progress bars
+const getProgessionBarWidth = (indicator) => {
+    return indicator * propositions.size / 100;
+};
 
-let hash = window.location.hash.substr(1);
+const setProgressionBars = (states) => {
+    states.forEach(state => {
+        document.querySelector(`.progression .progression-bar.is-${state}`).style.width = getProgessionBarWidth(statutsCompte[`${state}`]) + '%';
+        document.querySelector(`.progression .legend-item.is-${state} .value`).textContent = statutsCompte[`${state}`];
+    });
+};
+setProgressionBars(['fait', 'bien', 'attente', 'attention', 'joker']);
 
+// Scrolling to prop
 setTimeout(
     () => {
-
+        let hash = window.location.hash.substr(1);
         if (hash.length && propositions.get(hash)) {
             const re = /([A-Z]+)/;
 

@@ -120,6 +120,7 @@ body {
     }
   }
 
+
   #progres {
     display: flex;
     flex-flow: column;
@@ -145,6 +146,92 @@ body {
         height: 40px;
         margin-left: 0;
         margin-right: 16px;
+      }
+    }
+  }
+}
+
+.progression {
+  $at: &;
+  &__wrapper {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: nowrap;
+    border-radius: 18px;
+    overflow: hidden;
+    background-color: #000000;
+    #{$at}-bar {
+      height: 36px;
+      transition: filter .2s ease-out;
+      &:hover {
+        filter:brightness(1.2)
+      }
+      &.is {
+        &-fait {
+          background-color: $couleur-fait;
+        }
+        &-bien {
+          background-color: $couleur-fait;
+        }
+        &-attente {
+          background-color: $couleur-proposition;
+        }
+        &-attention {
+          background-color: $couleur-attention;
+        }
+        &-joker {
+          background-color: $couleur-joker;
+        }
+      }
+    }
+  }
+  &__legend {
+    margin-top: 20px;
+    @include pas-tel {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+    }
+    .legend {
+      &-item {
+        padding-left: 24px;
+        position: relative;
+        &::before {
+          content: '';
+          height: 16px;
+          width: 16px;
+          border-radius: 50%;
+          position: absolute;
+          top: 6px;
+          left: 0;
+        }
+        &.is {
+          &-fait {
+            &::before {
+              background-color: $couleur-fait;
+            }
+          }
+          &-bien {
+            &::before {
+              background-color: $couleur-fait;
+            }
+          }
+          &-attente {
+            &::before {
+              background-color: $couleur-proposition;
+            }
+          }
+          &-attention {
+            &::before {
+              background-color: $couleur-attention;
+            }
+          }
+          &-joker {
+            &::before {
+              background-color: $couleur-joker;
+            }
+          }
+        }
       }
     }
   }
