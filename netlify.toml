@@ -1,0 +1,4 @@
+[build]
+  base = "/"
+  publish = "/"
+  command = "npm i -g node-sass && node-sass ./css/style.scss -o ./css --style compressed"
