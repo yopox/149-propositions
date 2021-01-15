@@ -12,7 +12,7 @@
     <script src="js/propositions.js"></script>
     <script src="js/informations.js"></script>
 
-    <meta name="theme-color" content="#222">
+    <meta name="theme-color" content="#222222">
 </head>
 
 <body>
@@ -22,15 +22,32 @@
         </header>
 
         <div id="avancement">
-            <div id="resume">Emmanuel Macron <a href="https://youtu.be/m0F-uslFshA?t=557" target="_blank"
-                    rel="noopener">s'est
-                    engagé</a> à reprendre 146 des 149 propositions de la Convention Citoyenne pour le Climat, et à ce
-                qu'elles
-                soient mises en œuvre au plus vite.<br><br>
-                Où en est-on ?
+            <div id="resume">
+                <p>Emmanuel Macron <a href="https://youtube.com/watch?v=m0F-uslFshA?t=557" target="_blank"
+                        rel="noopener">s'est
+                        engagé</a> à reprendre 146 des 149 propositions de la Convention Citoyenne pour le Climat, et à
+                    ce
+                    qu'elles
+                    soient mises en œuvre au plus vite.</p>
+                <p>
+                    Où en est-on ?
+                </p>
             </div>
-            <div id="progression">
-
+            <div class="progression">
+                <div class="progression__wrapper">
+                    <div class="progression-bar is-fait" title="fait"></div>
+                    <div class="progression-bar is-bien" title="bien"></div>
+                    <div class="progression-bar is-attente" title="attente"></div>
+                    <div class="progression-bar is-attention" title="attention"></div>
+                    <div class="progression-bar is-joker" title="joker"></div>
+                </div>
+                <div class="progression__legend">
+                    <div class="legend-item is-fait">est fait (<span class="value"></span>)</div>
+                    <div class="legend-item is-bien">est bien (<span class="value"></span>)</div>
+                    <div class="legend-item is-attente">est attente (<span class="value"></span>)</div>
+                    <div class="legend-item is-attention">est attention (<span class="value"></span>)</div>
+                    <div class="legend-item is-joker">est joker (<span class="value"></span>)</div>
+                </div>
             </div>
         </div>
 
