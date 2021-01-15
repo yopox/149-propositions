@@ -350,6 +350,7 @@ header {
 }
 
 .proposition {
+  text-decoration: none;
   width: 50px;
   height: 50px;
   font-size: 14px;
@@ -402,6 +403,7 @@ header {
   }
 
   .pastille {
+    text-align: center;
     position: absolute;
     top: -7px;
     right: -7px;
