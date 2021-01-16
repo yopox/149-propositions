@@ -1,4 +1,4 @@
 [build]
-  base = "/"
-  publish = "/"
-  command = "npm i -g node-sass && node-sass ./css/style.scss -o ./css --style compressed"
+  base = "/src"
+  publish = "/public"
+  command = "npm i -g node-sass && node-sass ./scss/style.scss -o ./css --style compressed && mkdir ../public && cp -R ./{js,css,index.html} ../public"
