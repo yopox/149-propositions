@@ -20,18 +20,13 @@ let vehiculesMap = new Map([
 
 propositions.forEach((_, id) => {
     let info = informations[id];
-    if (info) {
-        let etat = info.etat ? info.etat : Etat.ATTENTE;
-        let ambition = info.ambition;
-        let vehicule = info.vehicule ? info.vehicule : Vehicule.INCONNU;
+    let etat = info?.etat ? info.etat : Etat.ATTENTE;
+    let ambition = info?.ambition ? info.ambition : Ambition.INCERTAINE;
+    let vehicule = info?.vehicule ? info.vehicule : Vehicule.INCONNU;
 
-        if (etat) statutsMap.set(etat, statutsMap.get(etat) + 1);
-        if (ambition) ambitionsMap.set(ambition, ambitionsMap.get(ambition) + 1);
-        vehiculesMap.set(vehicule, vehiculesMap.get(vehicule) + 1);
-    } else {
-        statutsMap.set(Etat.ATTENTE, statutsMap.get(Etat.ATTENTE) + 1);
-        vehiculesMap.set(Vehicule.INCONNU, vehiculesMap.get(Vehicule.INCONNU) + 1);
-    }
+    statutsMap.set(etat, statutsMap.get(etat) + 1);
+    ambitionsMap.set(ambition, ambitionsMap.get(ambition) + 1);
+    vehiculesMap.set(vehicule, vehiculesMap.get(vehicule) + 1);
 })
 
 const getProgessionBarWidth = (map, count) => {
