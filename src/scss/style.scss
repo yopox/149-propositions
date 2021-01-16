@@ -1,43 +1,7 @@
 @import 'reset';
 @import 'colors';
-
-$police-grande-ordi2: 36px;
-$police-grande-ordi: 32px;
-$police-grande-tablette: 28px;
-$police-grande-tel: 24px;
-
-$police-moyenne-ordi2: 20px;
-$police-moyenne-ordi: 18px;
-$police-moyenne-tablette: 16px;
-$police-moyenne-tel: 14px;
-
-$tablette: 768px;
-$ordi: 1024px;
-$ordi2: 1440px;
-
-@mixin pas-tel {
-  @media (min-width: $tablette) {
-    @content;
-  }
-}
-
-@mixin tablette {
-  @media (min-width: #{$tablette}) and (max-width: #{$ordi - 1px}) {
-    @content;
-  }
-}
-
-@mixin ordi {
-  @media (min-width: #{$ordi}) and (max-width: #{$ordi2 - 1px}) {
-    @content;
-  }
-}
-
-@mixin ordi2 {
-  @media (min-width: #{$ordi2}) {
-    @content;
-  }
-}
+@import 'fonts';
+@import 'breakpoints';
 
 @font-face {
   font-family: "JetBrains Mono";
@@ -49,23 +13,23 @@ html {
 }
 
 body {
-  background-color: $couleur-fond;
-  color: $couleur-texte;
+  background-color: $color-fond;
+  color: $color-texte;
   font-family: "JetBrains Mono", monospace;
-  font-size: $police-moyenne-tel;
+  font-size: $font-md-tel;
   padding: 32px 16px;
 
-  @include tablette {
-    padding: 32px 64px;
-    font-size: $police-moyenne-tablette;
+  @include media-md {
+    padding: 32px 16px;
+    font-size: $font-md-media-md;
   }
-  @include ordi {
-    padding: 64px 128px;
-    font-size: $police-moyenne-ordi;
+  @include media-lg {
+    padding: 64px 16px;
+    font-size: $font-md-media-lg;
   }
-  @include ordi2 {
-    padding: 96px 160px;
-    font-size: $police-moyenne-ordi2;
+  @include media-xl {
+    padding: 96px 16px;
+    font-size: $font-md-media-xl;
   }
 
   a {
@@ -74,19 +38,9 @@ body {
 }
 
 #racine {
-  max-width: 1840px;
+  max-width: 1500px;
   margin: 0 auto;
   padding: 0 16px;
-
-  @include tablette {
-    padding: 0 32px;
-  }
-  @include ordi {
-    padding: 0 64px;
-  }
-  @include ordi2 {
-    padding: 0 92px;
-  }
 }
 
 #avancement {
@@ -96,16 +50,12 @@ body {
   flex-flow: column;
   justify-content: start;
 
-  #resume {
-    //margin-bottom: 32px;
-  }
-
   #progres-conteneur {
     visibility: hidden;
     display: none;
     flex-flow: row;
     justify-content: center;
-    @include pas-tel {
+    @include not-sm {
       display: none;
     }
   }
@@ -114,7 +64,7 @@ body {
   #progres {
     display: flex;
     flex-flow: column;
-    @include pas-tel {
+    @include not-sm {
       flex-flow: row;
       flex-wrap: wrap;
     }
@@ -127,7 +77,7 @@ body {
       display: flex;
       flex-flow: row;
       align-items: center;
-      @include pas-tel {
+      @include not-sm {
         margin: 0 32px;
       }
 
@@ -143,7 +93,7 @@ body {
 
 .progression {
   margin-top: 16px;
-
+  $types: ('fait':$color-fait,'attente':$color-proposition,'joker':$color-joker,'bonne':$color-pastille-verte,'incertaine':$color-pastille-grise,'insuffisante':$color-pastille-rouge,'loi':$color-loi,'decret':$color-decret,'ordonnance':$color-ordonnance,'europe':$color-europe,'inconnu':$color-inconnu);
   $at: &;
   &__wrapper {
     margin-top: 8px;
@@ -153,55 +103,35 @@ body {
     overflow: hidden;
     background-color: #000000;
     #{$at}-bar {
-      height: 36px;
+      height: 24px;
+      @media (min-width: $media-lg) {
+        height: 36px;
+      }
       transition: filter .2s ease-out, width 1.8s .1s cubic-bezier(0.85, 0, 0.15, 1);
       width: 0;
       &:hover {
         filter:brightness(1.2)
       }
       &.is {
-        &-fait {
-          background-color: $couleur-fait;
-        }
-        &-attente {
-          background-color: $couleur-proposition;
-        }
-        &-joker {
-          background-color: $couleur-joker;
-        }
-        &-bonne {
-          background-color: $couleur-pastille-verte;
-        }
-        &-incertaine {
-          background-color: $couleur-pastille-grise;
-        }
-        &-insuffisante {
-          background-color: $couleur-pastille-rouge;
-        }
-        &-loi {
-          background-color: $couleur-loi;
-        }
-        &-decret {
-          background-color: $couleur-decret;
-        }
-        &-ordonnance {
-          background-color: $couleur-ordonnance;
-        }
-        &-europe {
-          background-color: $couleur-europe;
-        }
-        &-inconnu {
-          background-color: $couleur-inconnu;
+        @each $type, $color in $types {
+          &-#{$type} {
+            background-color: $color;
+          }
         }
       }
     }
   }
   &__legend {
     margin-top: 20px;
-    @include pas-tel {
+    @include not-sm {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       grid-template-rows: repeat(2, 1fr);
+    }
+    @include media-xl {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      grid-template-rows: none;
     }
     .legend {
       &-item {
@@ -218,59 +148,11 @@ body {
           left: 0;
         }
         &.is {
-          &-fait {
-            &::before {
-              background-color: $couleur-fait;
-            }
-          }
-          &-attente {
-            &::before {
-              background-color: $couleur-proposition;
-            }
-          }
-          &-joker {
-            &::before {
-              background-color: $couleur-joker;
-            }
-          }
-          &-bonne {
-            &::before {
-              background-color: $couleur-pastille-verte;
-            }
-          }
-          &-incertaine {
-            &::before {
-              background-color: $couleur-pastille-grise;
-            }
-          }
-          &-insuffisante {
-            &::before {
-              background-color: $couleur-pastille-rouge;
-            }
-          }
-          &-loi {
-            &::before {
-              background-color: $couleur-loi;
-            }
-          }
-          &-decret {
-            &::before {
-              background-color: $couleur-decret;
-            }
-          }
-          &-ordonnance {
-            &::before {
-              background-color: $couleur-ordonnance;
-            }
-          }
-          &-europe {
-            &::before {
-              background-color: $couleur-europe;
-            }
-          }
-          &-inconnu {
-            &::before {
-              background-color: $couleur-inconnu;
+          @each $type, $color in $types {
+            &-#{$type} {
+              &::before {
+                background-color: $color;
+              }
             }
           }
         }
@@ -318,19 +200,19 @@ header {
   justify-content: space-around;
   align-items: center;
 
-  font-size: $police-grande-tablette;
+  font-size: $font-lg-media-md;
   padding-bottom: 8px;
 
-  @include tablette {
-    font-size: $police-grande-tablette;
+  @include media-md {
+    font-size: $font-lg-media-md;
     padding-bottom: 16px;
   }
-  @include ordi {
-    font-size: $police-grande-ordi;
+  @include media-lg {
+    font-size: $font-lg-media-lg;
     padding-bottom: 32px;
   }
-  @include ordi2 {
-    font-size: $police-grande-ordi2;
+  @include media-xl {
+    font-size: $font-lg-media-xl;
     padding-bottom: 48px;
   }
 }
@@ -339,21 +221,21 @@ header {
   padding-top: 64px;
 
   .titre {
-    font-size: $police-grande-tel;
-    @include tablette {
-      font-size: $police-grande-tablette;
+    font-size: $font-lg-tel;
+    @include media-md {
+      font-size: $font-lg-media-md;
     }
-    @include ordi {
-      font-size: $police-grande-ordi;
+    @include media-lg {
+      font-size: $font-lg-media-lg;
     }
-    @include ordi2 {
-      font-size: $police-grande-ordi2;
+    @include media-xl {
+      font-size: $font-lg-media-xl;
     }
   }
 
   .details {
     display: none;
-    background-color: $couleur-proposition;
+    background-color: $color-proposition;
     border-radius: 12px;
     padding: 16px;
     margin-top: 8px;
@@ -379,7 +261,7 @@ header {
     justify-content: center;
     margin: 16px 0;
     padding: 16px;
-    border: 2px solid $couleur-vert;
+    border: 2px solid $color-vert;
   }
 
 }
@@ -402,23 +284,23 @@ header {
   border-radius: 12px;
   cursor: pointer;
   box-sizing: border-box;
-  color: $couleur-texte;
+  color: $color-texte;
   border: none;
 
-  @include pas-tel {
+  @include not-sm {
     width: 64px;
     height: 64px;
     font-size: 16px;
   }
 
   &--selectionne, &:hover, &:focus {
-    border: 2px solid $couleur-vert;
+    border: 2px solid $color-vert;
 
     .pastille {
       top: -9px !important;
       right: -9px !important;
 
-      @include pas-tel {
+      @include not-sm {
         top: -12px !important;
         right: -12px !important;
       }
@@ -427,15 +309,15 @@ header {
 
   &--etat {
     &--joker {
-      background-color: $couleur-joker;
+      background-color: $color-joker;
     }
 
     &--fait {
-      background-color: $couleur-fait;
+      background-color: $color-fait;
     }
 
     &--attente {
-      background-color: $couleur-proposition;
+      background-color: $color-proposition;
     }
   }
 
@@ -448,11 +330,11 @@ header {
     height: 18px;
     line-height: 19px;
     border-radius: 16px;
-    border: 2px solid $couleur-proposition;
-    color: $couleur-fond;
+    border: 2px solid $color-proposition;
+    color: $color-fond;
     font-weight: bold;
 
-    @include pas-tel {
+    @include not-sm {
       top: -10px;
       right: -10px;
       width: 24px;
@@ -461,15 +343,15 @@ header {
     }
 
     &--bonne {
-      background-color: $couleur-pastille-verte;
+      background-color: $color-pastille-verte;
     }
 
     &--inconnue {
-      background-color: $couleur-pastille-grise;
+      background-color: $color-pastille-grise;
     }
 
     &--decevante {
-      background-color: $couleur-pastille-rouge;
+      background-color: $color-pastille-rouge;
     }
   }
 
@@ -482,11 +364,11 @@ header {
     height: 18px;
     line-height: 19px;
     border-radius: 16px;
-    border: 2px solid $couleur-proposition;
-    color: $couleur-fond;
+    border: 2px solid $color-proposition;
+    color: $color-fond;
     font-weight: bold;
 
-    @include pas-tel {
+    @include not-sm {
       top: -10px;
       right: -10px;
       width: 24px;
@@ -495,15 +377,15 @@ header {
     }
 
     &--bonne {
-      background-color: $couleur-pastille-verte;
+      background-color: $color-pastille-verte;
     }
 
     &--inconnue {
-      background-color: $couleur-pastille-grise;
+      background-color: $color-pastille-grise;
     }
 
     &--decevante {
-      background-color: $couleur-pastille-rouge;
+      background-color: $color-pastille-rouge;
     }
   }
 
@@ -518,24 +400,24 @@ header {
 
 footer {
   margin-top: 40px;
-  color: lighten($couleur-proposition, 20%);
+  color: lighten($color-proposition, 20%);
 
   display: flex;
   flex-flow: column;
-  @include pas-tel {
+  @include not-sm {
     flex-flow: row;
   }
 
   a {
     color: inherit;
     margin: 8px 0;
-    @include pas-tel {
+    @include not-sm {
       margin: 0 16px 0 0;
     }
   }
 
   #contribuer {
-    color: $couleur-vert;
+    color: $color-vert;
   }
 }
 

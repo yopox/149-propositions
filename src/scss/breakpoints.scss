@@ -1,0 +1,27 @@
+$media-md: 768px;
+$media-lg: 1024px;
+$media-xl: 1440px;
+
+@mixin not-sm {
+    @media (min-width: $media-md) {
+      @content;
+    }
+}
+  
+@mixin media-md {
+    @media (min-width: #{$media-md}) and (max-width: #{$media-lg - 1px}) {
+        @content;
+    }
+}
+
+@mixin media-lg {
+    @media (min-width: #{$media-lg}) and (max-width: #{$media-xl - 1px}) {
+        @content;
+    }
+}
+
+@mixin media-xl {
+    @media (min-width: #{$media-xl}) {
+        @content;
+    }
+}
