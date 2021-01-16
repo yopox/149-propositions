@@ -12,5 +12,5 @@ Le but de ce projet est d'effectuer un contrôle citoyen de l'[engagement](https
 
 Toutes les contributions sont les bienvenues.
 
-- Si vous voulez ajouter une actualité concernant une proposition, utilisez [ce modèle de ticket](https://github.com/yopox/149-propositions/issues/new?assignees=&labels=actualit%C3%A9&template=nouvelle-actualit-.md&title=).
-- Pour des modifications plus conséquentes, clonez le projet et effectuez une fusiodemande.
+- Si vous voulez compléter le site, vous pouvez  [envoyer un mail](mailto:yopoxdev+149@gmail.com), ou bien [ouvrir un ticket](https://github.com/yopox/149-propositions/issues/new?assignees=&labels=actualit%C3%A9&template=nouvelle-actualit-.md&title=).
+- Pour des modifications plus conséquentes, clonez le projet et effectuez une fusiodemande (PR).
