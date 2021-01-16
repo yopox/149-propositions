@@ -9,6 +9,12 @@ $couleur-pastille-verte: #83e369;
 $couleur-pastille-grise: #b5a6a6;
 $couleur-pastille-rouge: #e36969;
 
+$couleur-loi: #9f3e3e;
+$couleur-decret: #9f6b3e;
+$couleur-ordonnance: #9f8f3e;
+$couleur-europe: #3e9f4b;
+$couleur-inconnu: #3e599f;
+
 $police-grande-ordi2: 36px;
 $police-grande-ordi: 32px;
 $police-grande-tablette: 28px;
@@ -150,9 +156,11 @@ body {
 }
 
 .progression {
+  margin-top: 16px;
+
   $at: &;
   &__wrapper {
-    margin-top: 20px;
+    margin-top: 8px;
     display: flex;
     flex-wrap: nowrap;
     border-radius: 18px;
@@ -174,6 +182,30 @@ body {
         }
         &-joker {
           background-color: $couleur-joker;
+        }
+        &-bonne {
+          background-color: $couleur-pastille-verte;
+        }
+        &-incertaine {
+          background-color: $couleur-pastille-grise;
+        }
+        &-insuffisante {
+          background-color: $couleur-pastille-rouge;
+        }
+        &-loi {
+          background-color: $couleur-loi;
+        }
+        &-decret {
+          background-color: $couleur-decret;
+        }
+        &-ordonnance {
+          background-color: $couleur-ordonnance;
+        }
+        &-europe {
+          background-color: $couleur-europe;
+        }
+        &-inconnu {
+          background-color: $couleur-inconnu;
         }
       }
     }
@@ -212,6 +244,46 @@ body {
           &-joker {
             &::before {
               background-color: $couleur-joker;
+            }
+          }
+          &-bonne {
+            &::before {
+              background-color: $couleur-pastille-verte;
+            }
+          }
+          &-incertaine {
+            &::before {
+              background-color: $couleur-pastille-grise;
+            }
+          }
+          &-insuffisante {
+            &::before {
+              background-color: $couleur-pastille-rouge;
+            }
+          }
+          &-loi {
+            &::before {
+              background-color: $couleur-loi;
+            }
+          }
+          &-decret {
+            &::before {
+              background-color: $couleur-decret;
+            }
+          }
+          &-ordonnance {
+            &::before {
+              background-color: $couleur-ordonnance;
+            }
+          }
+          &-europe {
+            &::before {
+              background-color: $couleur-europe;
+            }
+          }
+          &-inconnu {
+            &::before {
+              background-color: $couleur-inconnu;
             }
           }
         }

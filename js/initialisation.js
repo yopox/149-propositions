@@ -1,14 +1,4 @@
-import { animateCountUp } from './utils/animateCountUp.js';
-
 const re = /(([A-Z.-]+)([0-9.]+))/;
-
-let statutsCompte = {
-    "fait": 0,
-    "bien": 0,
-    "attention": 0,
-    "joker": 0,
-    "attente": 0
-};
 
 let propositionsId = [];
 propositions.forEach((contenu, id) => {
@@ -46,10 +36,10 @@ propositions.forEach((contenu, id) => {
                 case Ambition.BONNE:
                     pastille.classList.add("pastille--bonne");
                     break;
-                case Ambition.DECEVANTE:
+                case Ambition.INSUFFISANTE:
                     pastille.classList.add("pastille--decevante");
                     break;
-                case Ambition.INCONNUE:
+                case Ambition.INCERTAINE:
                     pastille.classList.add("pastille--inconnue");
                     break;
             }
@@ -130,23 +120,9 @@ propositions.forEach((contenu, id) => {
     let etat = Etat.ATTENTE;
     if (infos) etat = infos.etat || Etat.ATTENTE;
     proposition.classList.add('proposition--etat--' + etat);
-    statutsCompte[etat] += 1;
 
     parent.appendChild(proposition);
 });
-
-// Progress bars
-const getProgessionBarWidth = (indicator) => {
-    return indicator * 100 / propositions.size;
-};
-
-const setProgressionBars = (states) => {
-    states.forEach(state => {
-        document.querySelector(`.progression .progression-bar.is-${state}`).style.width = getProgessionBarWidth(statutsCompte[`${state}`]) + '%';
-        animateCountUp(statutsCompte[`${state}`], document.querySelector(`.progression .legend-item.is-${state} .value`));
-    });
-};
-setProgressionBars(['fait', 'attente', 'joker']);
 
 // Scrolling to prop
 setTimeout(

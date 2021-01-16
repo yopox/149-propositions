@@ -1,6 +1,6 @@
 const Etat = {FAIT: "fait", JOKER: "joker", ATTENTE: "attente"}
 Object.freeze(Etat)
-const Ambition = {BONNE: "bonne", DECEVANTE: "decevante", INCONNUE: "inconnue"}
+const Ambition = {BONNE: "bonne", INSUFFISANTE: "insuffisante", INCERTAINE: "incertaine"}
 Object.freeze(Ambition)
 const Vehicule = {LOI: "loi", DECRET: "decret", ORDONNANCE: "ordonnance", EUROPE: "europe", INCONNU: "inconnu"}
 Object.freeze(Vehicule)
@@ -13,7 +13,7 @@ const informations = {
 
     "C1.1": {
         vehicule: Vehicule.DECRET,
-        ambition: Ambition.DECEVANTE,
+        ambition: Ambition.INSUFFISANTE,
         actus: [
             ["Le 11 octobre 2020 - La mesure semble convaincre le gouvernement.", "https://www.latribune.fr/economie/france/climat-le-gouvernement-compte-sur-le-score-carbone-859481.html"],
             ["Le 8 janvier 2021 - Projet de loi (article 1) : L'affichage ne concerne pas tous les produits de consommation et les services.", "TREX"],
@@ -21,7 +21,7 @@ const informations = {
     },
     "C2.1": {
         vehicule: Vehicule.LOI,
-        ambition: Ambition.DECEVANTE,
+        ambition: Ambition.INSUFFISANTE,
         actus: [
             ["Le 30 juin 2020 - Bruno Le Maire se positionne contre la mesure.", "https://www.huffingtonpost.fr/entry/macron-bruno-le-maire-joker-convention-climat_fr_5efb7570c5b612083c53aa75"],
             ["Le 8 janvier 2021 - Projet de loi climat (article 4) : L'interdiction concerne uniquement les publicités pour les \"énergies fossiles\". Pour les produits les plus émetteurs de GES (article 5), il faudra compter sur des \"conclusions de codes de bonne conduite\" volontaires du CSA.", "TREX"],
@@ -81,14 +81,14 @@ const informations = {
 
     "PT1.3": {
         vehicule: Vehicule.DECRET,
-        ambition: Ambition.DECEVANTE,
+        ambition: Ambition.INSUFFISANTE,
         actus: [
             ["Le 8 janvier 2021 - Projet de loi climat (article 13) : Le point (2) est repris : La disponibilité des pièces détachées est définie par un décret du Conseil d'État.", "TREX"],
         ]
     },
     "PT2.1": {
         vehicule: Vehicule.LOI,
-        ambition: Ambition.DECEVANTE,
+        ambition: Ambition.INSUFFISANTE,
         actus: [
             ["Le 8 janvier 2021 - Projet de loi climat (article 14) : Articulation entre la stratégie nationale bas carbone et la stratégie nationale de recherche.", "TREX"],
         ]
@@ -140,14 +140,14 @@ const informations = {
     },
     "PT8.3": {
         vehicule: Vehicule.ORDONNANCE,
-        ambition: Ambition.INCONNUE,
+        ambition: Ambition.INCERTAINE,
         actus: [
             ["Le 8 janvier 2021 - Projet de loi climat (article 20) : Le gouvernement va réformer le code minier par ordonnances.", "TREX"],
         ]
     },
     "PT8.4": {
         vehicule: Vehicule.LOI,
-        ambition: Ambition.DECEVANTE,
+        ambition: Ambition.INSUFFISANTE,
         actus: [
             ["Le 8 janvier 2021 - Projet de loi climat (article 19) : Ajout dans la loi sur l'eau de l'importance du cycle de l'eau.", "TREX"],
         ]
@@ -195,7 +195,7 @@ const informations = {
     },
     "SD-A2.2": {
         vehicule: Vehicule.LOI,
-        ambition: Ambition.DECEVANTE,
+        ambition: Ambition.INSUFFISANTE,
         actus: [
             ["Le 11 octobre 2020 - Le gouvernement se prononce contre les interdictions en principe, favorisant l'information.", "https://www.latribune.fr/economie/france/climat-le-gouvernement-compte-sur-le-score-carbone-859481.html"],
             ["Le 8 janvier 2021 - Projet de loi climat (article 25) : Extension des zones à faibles émissions mobilités aux agglomérations de plus de 150 000 habitants.", "TREX"],
@@ -268,7 +268,7 @@ const informations = {
     },
     "SD-C1.2": {
         etat: Etat.FAIT,
-        ambition: Ambition.DECEVANTE,
+        ambition: Ambition.INSUFFISANTE,
         vehicule: Vehicule.LOI,
         actus: [
             ["Le 09 juillet 2020 - Proposé lors du projet de loi de finances mais rejeté par la majorité.", "https://reporterre.net/Budget-les-deputes-ne-prennent-pas-en-compte-les-mesures-de-la-Convention-climat"],
@@ -277,7 +277,7 @@ const informations = {
         ]
     },
     "SD-C1.3": {
-        ambition: Ambition.DECEVANTE,
+        ambition: Ambition.INSUFFISANTE,
         vehicule: Vehicule.LOI,
         actus: [
             ["Le 8 janvier 2021 - Projet de loi climat (article 28) : La deuxième étape de la proposition est retenue (fin de la vente des voitures neuves > 95 gCO2/km en 2030), avec une exception.", "TREX"],
@@ -303,7 +303,7 @@ const informations = {
     },
     "SD-E2": {
         vehicule: Vehicule.DECRET,
-        ambition: Ambition.DECEVANTE,
+        ambition: Ambition.INSUFFISANTE,
         actus: [
             ["Le 29 juin 2020 - Discours du PR : il en reste aux annonces déjà faites sur les trajets de moins de 2h30.", "https://youtu.be/m0F-uslFshA?t=1675"],
             ["Le 8 janvier 2021 - Projet de loi climat (article 35) : La proposition est reprise (trajets de moins de 2h30).", "TREX"],
@@ -311,7 +311,7 @@ const informations = {
     },
     "SD-E3": {
         vehicule: Vehicule.LOI,
-        ambition: Ambition.DECEVANTE,
+        ambition: Ambition.INSUFFISANTE,
         actus: [
             ["Le 01 juillet 2020 - Jean-Baptiste Djebbari annonce qu'il pourra y avoir des extensions d'aéroports.", "https://rmc.bfmtv.com/mediaplayer/video/jean-baptiste-djebbari-etait-l-invite-de-jean-jacques-bourdin-ce-mercredi-1er-jullet-2020-1259424.html"],
             ["Le 8 janvier 2021 - Projet de loi climat (article 36) : Les extensions seront encadrées.", "TREX"],
@@ -344,7 +344,7 @@ const informations = {
 
     "SL1.1": {
         vehicule: Vehicule.LOI,
-        ambition: Ambition.DECEVANTE,
+        ambition: Ambition.INSUFFISANTE,
         actus: [
             ["Le 27 juillet 2020 - Le gouvernement va introduire, par décret, la performance énergétique parmi les critères de la \"décence\" d'un logement dès le 1er janvier 2023, mais le seuil choisi est beaucoup trop élevé.", "https://www.mediapart.fr/journal/france/280720/relance-ecologique-derriere-les-chiffres-un-grand-vide"],
             ["Le 8 janvier 2021 - Projet de loi climat (article 38 à 43) : La proposition est déclinée en articles avec des contraintes pour les passoires thermiques (seuils F et G).", "TREX"],
@@ -377,7 +377,7 @@ const informations = {
     },
     "SL3.2": {
         vehicule: Vehicule.LOI,
-        ambition: Ambition.DECEVANTE,
+        ambition: Ambition.INSUFFISANTE,
         actus: [
             ["Le 11 octobre 2020 - Le gouvernement se prononce contre les interdictions en principe, favorisant l'information.", "https://www.latribune.fr/economie/france/climat-le-gouvernement-compte-sur-le-score-carbone-859481.html"],
             ["Le 8 janvier 2021 - Projet de loi climat (article 51) : La proposition est reprise.", "TREX"],
@@ -392,7 +392,7 @@ const informations = {
     },
     "SL3.4": {
         vehicule: Vehicule.LOI,
-        ambition: Ambition.DECEVANTE,
+        ambition: Ambition.INSUFFISANTE,
         actus: [
             ["Le 27 juillet 2020 - Création de deux PNR et d'un espace protégé (projets déjà engagés).", "https://www.francetvinfo.fr/monde/environnement/convention-citoyenne-sur-le-climat/lutte-contre-les-passoires-thermiques-fin-des-terrasses-chauffees-voici-les-premieres-mesures-de-la-convention-citoyenne-pour-le-climat-retenues-par-le-gouvernement_4057589.html"],
             ["Le 8 janvier 2021 - Projet de loi climat (article 54 et 55) : Fixation dans la loi des aires protégées.", "TREX"],
@@ -427,7 +427,7 @@ const informations = {
     },
     "SL3.11": {
         vehicule: Vehicule.ORDONNANCE,
-        ambition: Ambition.INCONNUE,
+        ambition: Ambition.INCERTAINE,
         actus: [
             ["Le 8 janvier 2021 - Projet de loi climat (article 53) : Le gouvernement prendra par voie d'ordonnances des mesures pour entre autres lutter contre l'étalement urbain et l'artificialisation des sols.", "TREX"],
         ]
@@ -439,7 +439,7 @@ const informations = {
 
     "SN1.1.6": {
         vehicule: Vehicule.LOI,
-        ambition: Ambition.DECEVANTE,
+        ambition: Ambition.INSUFFISANTE,
         actus: [
             ["Le 7 décembre 2020 - L'option végétarienne dans les cantines sera une expérimentation facultative.", "https://www.l214.com/communications/20201208-mesures-convention-citoyenne-climat-repas-viande-vegetarien"],
             ["Le 8 janvier 2021 - Projet de loi climat (article 56) : L'option végétarienne est une expérimentation volontaire.", "TREX"],
@@ -454,7 +454,7 @@ const informations = {
     },
     "SN2.1.3": {
         vehicule: Vehicule.DECRET,
-        ambition: Ambition.DECEVANTE,
+        ambition: Ambition.INSUFFISANTE,
         actus: [
             ["Le 8 janvier 2021 - Projet de loi climat (article 59) : La proposition est reprise.", "TREX"],
         ]
@@ -466,7 +466,7 @@ const informations = {
     },
     "SN2.1.5": {
         vehicule: Vehicule.LOI,
-        ambition: Ambition.DECEVANTE,
+        ambition: Ambition.INSUFFISANTE,
         actus: [
             ["Le 8 janvier 2021 - Projet de loi climat (article 60 et 61) : Le Plan Protéines Végétales n'est pas repris.", "TREX"],
         ]
