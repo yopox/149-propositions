@@ -37,10 +37,19 @@ body {
   }
 }
 
-#racine {
+#root {
   max-width: 1500px;
   margin: 0 auto;
   padding: 0 16px;
+  @include media-md {
+    max-width: #{$media-md * 0.95};
+  }
+  @include media-lg {
+    max-width: #{$media-lg * 0.9};
+  }
+  @include media-xl {
+    max-width: #{$media-xl * 0.9};
+  }
 }
 
 #avancement {
