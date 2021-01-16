@@ -152,3 +152,5 @@ const propositions = new Map([
     ["RC3", "Modifier le préambule de la Constitution pour y ajouter : « « La conciliation des droits, libertés et principes qui en résultent ne saurait compromettre la préservation de l'environnement, patrimoine commun de l'humanité. »"],
     ["RC4", "Modifier l'article premier de la Constitution pour y ajouter : « La République garantit la préservation de la biodiversité, de l'environnement et lutte contre le dérèglement climatique »."]
 ]);
+
+export default propositions;

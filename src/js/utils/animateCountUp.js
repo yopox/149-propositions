@@ -4,7 +4,7 @@ const easeInOutCirc = x => x < 0.5
     ? (1 - Math.sqrt(1 - Math.pow(2 * x, 2))) / 2
     : (Math.sqrt(1 - Math.pow(-2 * x + 2, 2)) + 1) / 2;
 
-export const animateCountUp = (countTo, el) => {
+const animateCountUp = (countTo, el) => {
     const animationDuration = 2000;
     const frameDuration = 1000 / 60;
     const totalFrames = Math.round(animationDuration / frameDuration);
@@ -23,3 +23,5 @@ export const animateCountUp = (countTo, el) => {
         }
     }, frameDuration);
 };
+
+export default animateCountUp;

@@ -1,3 +1,8 @@
+import { Vehicule, Ambition, Etat, informations } from './data/informations.js';
+import propositions from './data/propositions.js';
+import progression from './progression.js';
+progression();
+
 const re = /(([A-Z.-]+)([0-9.]+))/;
 
 let propositionsId = [];

@@ -1,9 +1,10 @@
-const Etat = {FAIT: "fait", JOKER: "joker", ATTENTE: "attente"}
-Object.freeze(Etat)
-const Ambition = {BONNE: "bonne", INSUFFISANTE: "insuffisante", INCERTAINE: "incertaine"}
-Object.freeze(Ambition)
-const Vehicule = {LOI: "loi", DECRET: "decret", ORDONNANCE: "ordonnance", EUROPE: "europe", INCONNU: "inconnu"}
-Object.freeze(Vehicule)
+const Etat = { FAIT: "fait", JOKER: "joker", ATTENTE: "attente" };
+Object.freeze(Etat);
+const Ambition = { BONNE: "bonne", INSUFFISANTE: "insuffisante", INCERTAINE: "incertaine" };
+Object.freeze(Ambition);
+const Vehicule = { LOI: "loi", DECRET: "decret", ORDONNANCE: "ordonnance", EUROPE: "europe", INCONNU: "inconnu" };
+Object.freeze(Vehicule);
+
 
 const informations = {
 
@@ -529,4 +530,7 @@ const informations = {
             ["Le 29 juin 2020 - Joker du président de la République.", "https://youtu.be/m0F-uslFshA?t=2256"],
         ]
     },
-}
+};
+
+export { Vehicule, Ambition, Etat, informations };
+export default informations;
