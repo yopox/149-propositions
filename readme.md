@@ -4,7 +4,9 @@ Code source du site [149propositions.fr](https://www.149propositions.fr).
 
 Le but de ce projet est d'effectuer un contrôle citoyen de l'[engagement](https://youtu.be/m0F-uslFshA?t=557) du président de la République : reprendre 146 des 149 propositions de la Convention Citoyenne pour le Climat.
 
-![Capture d'écran du site](src/misc/capture.png)
+![Progrès](src/misc/progres.png)
+
+![Proposition C1.1](src/misc/c1-1.png)
 
 # Contribuer
 
