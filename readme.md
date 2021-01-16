@@ -1,5 +1,8 @@
 # 149 propositions
 
+[![statut](https://img.shields.io/website?down_color=red&down_message=down&up_color=green&up_message=online&url=https%3A%2F%2Fwww.149propositions.fr)](https://www.149propositions.fr)
+[![license](https://img.shields.io/badge/license-CC0--1.0-green.svg)](https://github.com/yopox/149-propositions/blob/principale/LICENSE)
+
 Code source du site [149propositions.fr](https://www.149propositions.fr).
 
 Le but de ce projet est d'effectuer un contrôle citoyen de l'[engagement](https://youtu.be/m0F-uslFshA?t=557) du président de la République : reprendre 146 des 149 propositions de la Convention Citoyenne pour le Climat.
