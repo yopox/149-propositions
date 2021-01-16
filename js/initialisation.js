@@ -146,7 +146,7 @@ const setProgressionBars = (states) => {
         animateCountUp(statutsCompte[`${state}`], document.querySelector(`.progression .legend-item.is-${state} .value`));
     });
 };
-setProgressionBars(['fait', 'bien', 'attente', 'attention', 'joker']);
+setProgressionBars(['fait', 'attente', 'joker']);
 
 // Scrolling to prop
 setTimeout(
