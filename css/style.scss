@@ -220,6 +220,7 @@ body {
     .legend {
       &-item {
         padding-left: 24px;
+        margin-top: 2px;
         position: relative;
         &::before {
           content: '';
@@ -227,7 +228,7 @@ body {
           width: 16px;
           border-radius: 50%;
           position: absolute;
-          top: 6px;
+          top: 4px;
           left: 0;
         }
         &.is {
